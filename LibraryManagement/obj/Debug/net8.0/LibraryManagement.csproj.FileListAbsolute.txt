@@ -81,3 +81,4 @@ C:\Dev\dotnetproject\LibraryManagement\LibraryManagement\obj\Debug\net8.0\scoped
 C:\Dev\dotnetproject\LibraryManagement\LibraryManagement\obj\Debug\net8.0\scopedcss\Views\Account\Profile.cshtml.rz.scp.css
 C:\Dev\dotnetproject\LibraryManagement\LibraryManagement\obj\Debug\net8.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
 C:\Dev\dotnetproject\LibraryManagement\LibraryManagement\obj\Debug\net8.0\scopedcss\Views\Shared\Components\Carousel\Default.cshtml.rz.scp.css
+C:\Dev\dotnetproject\LibraryManagement\LibraryManagement\obj\Debug\net8.0\LibraryManagement.sourcelink.json

@@ -1,14 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LibraryManagement.Models;
+using LibraryManagement.Models.Auth;
+using LibraryManagement.Models.Context;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagement.Controllers
 {
+    
     public class AccountController : Controller
     {
+        private readonly ApplicationDbContext _context;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
+
+        public AccountController(ApplicationDbContext context, UserManager<User> userManager, SignInManager<User> signInManager)
+        {
+            _context = context;
+            _userManager = userManager;
+            _signInManager = signInManager;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
 
-            // Check if the user didn't login
             // Check if the user didn't login
             //if (!User.Identity.IsAuthenticated)
             //{
@@ -16,10 +31,20 @@ namespace LibraryManagement.Controllers
             //}
             return RedirectToAction("Login");
         }
-
-        public IActionResult Login()
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return View(model);
         }
 
 
@@ -30,8 +55,9 @@ namespace LibraryManagement.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
+            await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
 
