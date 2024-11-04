@@ -33,6 +33,7 @@ namespace LibraryManagement.Controllers
             var books = _dbContext.Book.ToList();
             ViewBag.Books = books;
             return View();
+
         }
     }
 }
