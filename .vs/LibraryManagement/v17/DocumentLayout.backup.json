@@ -1,0 +1,480 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Dev\\dotnetproject\\LibraryManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\models\\carousel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\models\\carousel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\book\\booklist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\book\\booklist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\shared\\components\\carousel\\default.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\shared\\components\\carousel\\default.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\viewcomponents\\carouselviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\viewcomponents\\carouselviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\shared\\components\\carousel\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\shared\\components\\carousel\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\shared\\components\\carousel\\default.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\shared\\components\\carousel\\default.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\home\\index.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\home\\index.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\librarymanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\librarymanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\book\\bookdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\book\\bookdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\models\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\models\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\models\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\models\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\models\\auth\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\models\\auth\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\models\\auth\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\models\\auth\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|c:\\dev\\dotnetproject\\librarymanagement\\librarymanagement\\views\\shared\\_adminlayout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ABAC19C6-A96C-487D-AE4B-70F0AC0DAD81}|LibraryManagement\\LibraryManagement.csproj|solutionrelative:librarymanagement\\views\\shared\\_adminlayout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Default.cshtml.css",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml.css",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml.css",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml.css",
+              "RelativeToolTip": "LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-04T05:34:49.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml",
+              "RelativeToolTip": "LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-04T05:29:39.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CarouselViewComponent.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\ViewComponents\\CarouselViewComponent.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\ViewComponents\\CarouselViewComponent.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\ViewComponents\\CarouselViewComponent.cs",
+              "RelativeToolTip": "LibraryManagement\\ViewComponents\\CarouselViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T05:27:49.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Controllers\\BookController.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Controllers\\BookController.cs",
+              "RelativeToolTip": "LibraryManagement\\Controllers\\BookController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T16:13:44.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Book\\index.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Book\\index.cshtml",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Book\\index.cshtml",
+              "RelativeToolTip": "LibraryManagement\\Views\\Book\\index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T17:20:33.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookList.cshtml",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Book\\BookList.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Book\\BookList.cshtml",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Book\\BookList.cshtml",
+              "RelativeToolTip": "LibraryManagement\\Views\\Book\\BookList.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T16:00:48.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Carousel.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Carousel.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Models\\Carousel.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Carousel.cs",
+              "RelativeToolTip": "LibraryManagement\\Models\\Carousel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T16:43:14.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "LibraryManagement\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T17:10:45.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "LibraryManagement\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAzwBEAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-04T06:00:17.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "LibraryManagement\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T17:28:51.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml.css",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Home\\Index.cshtml.css",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Home\\Index.cshtml.css",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Home\\Index.cshtml.css",
+              "RelativeToolTip": "LibraryManagement\\Views\\Home\\Index.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-04T04:52:32.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Default.cshtml.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml.cs",
+              "RelativeToolTip": "LibraryManagement\\Views\\Shared\\Components\\Carousel\\Default.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T05:29:42.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LibraryManagement\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwBsAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T16:56:36.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Program.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Program.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Program.cs",
+              "RelativeToolTip": "LibraryManagement\\Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAqwB0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T16:46:09.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "LibraryManagement\\Controllers\\BaseController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwBYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T04:58:51.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LibraryManagement.csproj",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
+              "RelativeDocumentMoniker": "LibraryManagement\\LibraryManagement.csproj",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
+              "RelativeToolTip": "LibraryManagement\\LibraryManagement.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-04T05:27:05.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BookDetail.cshtml",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Book\\BookDetail.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Book\\BookDetail.cshtml",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Book\\BookDetail.cshtml",
+              "RelativeToolTip": "LibraryManagement\\Views\\Book\\BookDetail.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwA0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-04T05:16:39.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Context\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Models\\Context\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Context\\ApplicationDbContext.cs",
+              "RelativeToolTip": "LibraryManagement\\Models\\Context\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T15:28:53.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Models\\Book.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Book.cs",
+              "RelativeToolTip": "LibraryManagement\\Models\\Book.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T15:28:39.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "LibraryManagement\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-02T17:48:07.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\User.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Models\\User.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\User.cs",
+              "RelativeToolTip": "LibraryManagement\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T16:18:48.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Auth\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Models\\Auth\\LoginViewModel.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Auth\\LoginViewModel.cs",
+              "RelativeToolTip": "LibraryManagement\\Models\\Auth\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T16:12:27.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Auth\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Models\\Auth\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Auth\\RegisterViewModel.cs",
+              "RelativeToolTip": "LibraryManagement\\Models\\Auth\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T16:12:28.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Models\\Category.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Category.cs",
+              "RelativeToolTip": "LibraryManagement\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T15:27:53.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "LibraryManagement\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T07:55:02.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Author.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Author.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Models\\Author.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Author.cs",
+              "RelativeToolTip": "LibraryManagement\\Models\\Author.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwCkAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T15:27:14.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Loan.cs",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Loan.cs",
+              "RelativeDocumentMoniker": "LibraryManagement\\Models\\Loan.cs",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Models\\Loan.cs",
+              "RelativeToolTip": "LibraryManagement\\Models\\Loan.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwBQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T15:26:45.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_AdminLayout.cshtml.css",
+              "DocumentMoniker": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\_AdminLayout.cshtml.css",
+              "RelativeDocumentMoniker": "LibraryManagement\\Views\\Shared\\_AdminLayout.cshtml.css",
+              "ToolTip": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\Views\\Shared\\_AdminLayout.cshtml.css",
+              "RelativeToolTip": "LibraryManagement\\Views\\Shared\\_AdminLayout.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-30T08:11:54.607Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

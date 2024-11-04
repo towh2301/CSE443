@@ -1,0 +1,17 @@
+.divider[b-90oose29nn]:after,
+.divider[b-90oose29nn]:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom[b-90oose29nn] {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom[b-90oose29nn] {
+        height: 100%;
+    }
+}
