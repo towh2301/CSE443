@@ -1,0 +1,38 @@
+﻿@model IEnumerable<LibraryManagement.Models.Carousel>
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+
+        @{
+            var first = true;
+        }
+        @for (var i = 0; i < Model.Count(); i++)
+        {
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="@i" class="@(first?Html.Raw("active"):Html.Raw(""))" aria-current="true" aria-label="Slide @i"></button>
+            first = false;
+        }
+    </div>
+    <div class="carousel-inner">
+        @{
+            var second = true;
+        }
+        @foreach (var item in Model)
+        {
+            <div class="carousel-item @(second?Html.Raw("active"):Html.Raw(""))">
+                <img src="@item.ImageUrl" class="d-block w-100 carousel-image" alt="@item.Title">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>@item.Title</h5>
+                    <p>@item.Description</p>
+                </div>
+            </div>
+            second = false;
+        }
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
