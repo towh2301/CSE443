@@ -1,18 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Book 
+
 @{
+    Layout = "_AppLayout";
+    ViewData["Title"] = Model.Title;
 }
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 book-detail-container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="https://placehold.co/600x400" alt="Book Cover" class="img-fluid mb-3 book-cover">
+                </div>
+                <div class="col-md-8">
+                    <h1 class="mb-3 book-title">@Model.Title</h1>
+                    <div class="book-info">
+                        <p><strong>Description:</strong> @Model.Description</p>
+                        <p><strong>Author:</strong> @Model.Author</p>
+                        <p><strong>Publisher:</strong> @Model.Publisher</p>
+                        <p><strong>Published Year:</strong> @Model.PublishedYear</p>
+                        <p><strong>Genre:</strong> @Model.Category</p>
+                    </div>
+                    <a href="#" class="btn btn-primary mt-4">Loan now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Book Detail</title>
-</head>
-<body>
-    
-
-    <p>Book Detail parameter</p>
-</body>
-</html>

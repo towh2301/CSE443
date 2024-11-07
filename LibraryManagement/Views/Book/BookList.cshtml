@@ -4,23 +4,25 @@
 @{
     Layout = "_Layout";
 }
-
-<div class="row flex-row align-content-center my-5"> 
+<div class="row flex-row align-content-center my-5">
     @foreach (var book in ViewBag.Books)
-    { 
-            <div class="col-md-3 my-3"> 
-                <div class="card h-100"> 
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product Image"> 
-                    <div class="card-body d-flex flex-column"> <!-- Add these classes -->
-                        <div>
-                            <h5 class="card-title">@book.Title</h5> 
-                            <p class="card-text">@book.Description</p>
-                            <p class="card-text">@book.Publisher</p> 
-                            <p class="text-muted">@book.PublishedYear</p> 
-                        </div>
-                        <a href="#" class="btn btn-primary mt-auto">Loan now</a> <!-- Add mt-auto -->
-                    </div> 
-                </div> 
-            </div> 
-    } 
+    {
+    <div class="col-md-3 my-3">
+        <div class="book-list">
+            <!-- Example of a book card -->
+            <div class="card h-100">
+                <img src="@book.Avatar" alt="Book Cover" onclick="location.href='@Url.Action("BookDetail", "Book", new { id = book.BookId })'">
+                <div class="card-content">
+                    <h5>@book.Title</h5>
+                    <p>@book.Description</p>
+                    <div class="book-author">@book.Publisher</div>
+                    <div class="published-date">@book.PublishedYear</div>
+                </div>
+                <a href="#" class="loan-button">Loan now</a>
+            </div>
+        </div>
+    </div>
+    }
 </div>
+
+

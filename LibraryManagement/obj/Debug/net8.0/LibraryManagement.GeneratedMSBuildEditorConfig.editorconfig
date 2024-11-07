@@ -9,79 +9,79 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LibraryManagement
 build_property.RootNamespace = LibraryManagement
-build_property.ProjectDir = C:\Dev\dotnetproject\LibraryManagement\LibraryManagement\
+build_property.ProjectDir = C:\Users\huybu\Desktop\dotnetproject\LibraryManagement\LibraryManagement\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Dev\dotnetproject\LibraryManagement\LibraryManagement
+build_property.MSBuildProjectDirectory = C:\Users\huybu\Desktop\dotnetproject\LibraryManagement\LibraryManagement
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Admin/Index.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Book/BookDetail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rRGV0YWlsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Book/BookList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rTGlzdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Book/index.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Book/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Home/Privacy.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/Error.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/_ViewImports.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/_ViewStart.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Account/Login.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-90oose29nn
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Account/Profile.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-ahwg6gg75y
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Account/Register.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-kednuh6zwa
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Home/Index.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Book/BookDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-iwvj28q9qt
+
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Book/BookList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-t17lq2i02z
+
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-ftopbbasri
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/Components/Carousel/Default.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/Components/Carousel/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2Fyb3VzZWxcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-tghslklqlm
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-a5dut8hgxd
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/_AppLayout.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/_AppLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BcHBMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-cc2fhzplmo
 
-[C:/Dev/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/_Layout.cshtml]
+[C:/Users/huybu/Desktop/dotnetproject/LibraryManagement/LibraryManagement/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zogy9lo6il

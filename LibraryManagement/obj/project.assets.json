@@ -3768,11 +3768,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
+      "projectUniqueName": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
       "projectName": "LibraryManagement",
-      "projectPath": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
+      "projectPath": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
       "packagesPath": "C:\\Users\\huybu\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\obj\\",
+      "outputPath": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\huybu\\AppData\\Roaming\\NuGet\\NuGet.Config",

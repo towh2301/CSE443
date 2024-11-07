@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagement.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class BookController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
@@ -20,9 +20,14 @@ namespace LibraryManagement.Controllers
             return View();
         }
 
-        public IActionResult BookDetail()
+        public async Task<IActionResult> BookDetail(int id)
         {
-            return View();
+            var book = await _dbContext.Book.FindAsync(id); // Fetch the book by ID
+            if (book == null)
+            {
+                return NotFound();
+            }
+            return View(book);
         }
 
         public IActionResult BookList()

@@ -135,3 +135,8 @@ button.accept-policy {
     line-height: 60px;
 }
 
+.nav-item {
+    font: bold;
+    color: antiquewhite
+}
+

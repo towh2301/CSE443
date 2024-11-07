@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0K7nVQP81XI=",
+  "dgSpecHash": "nu54ZU9psDc=",
   "success": true,
-  "projectFilePath": "C:\\Dev\\dotnetproject\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
+  "projectFilePath": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\huybu\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\huybu\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
