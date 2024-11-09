@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
-
-namespace LibraryManagement.Models
+﻿namespace LibraryManagement.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations;

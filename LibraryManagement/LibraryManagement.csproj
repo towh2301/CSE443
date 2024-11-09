@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <Folder Include="assets\" />
-    <Folder Include="wwwroot\book_images\" />
+    <Folder Include="wwwroot\book_pdfs\" />
   </ItemGroup>
 
 </Project>

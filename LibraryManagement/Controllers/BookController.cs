@@ -1,20 +1,12 @@
 ﻿using LibraryManagement.Models;
 using LibraryManagement.Models.Context;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagement.Controllers
 {
-    //[Authorize]
-    public class BookController : Controller
+    public class BookController(ApplicationDbContext context) : Controller
     {
-        private readonly ApplicationDbContext _dbContext;
-
-        public BookController(ApplicationDbContext context)
-        {
-            _dbContext = context;
-        }
-
         public IActionResult Index()
         {
             return View();
@@ -22,7 +14,7 @@ namespace LibraryManagement.Controllers
 
         public async Task<IActionResult> BookDetail(int id)
         {
-            var book = await _dbContext.Book.FindAsync(id); // Fetch the book by ID
+            var book = await context.Book.FindAsync(id);
             if (book == null)
             {
                 return NotFound();
@@ -30,17 +22,66 @@ namespace LibraryManagement.Controllers
             return View(book);
         }
 
-        public IActionResult BookList()
+        public async Task<IActionResult> BookList(int? categoryId = null)
         {
-            return ShowBookListFromDb();
+            try
+            {
+                // Get all categories for the navigation
+
+                var categories = await (context.Category?.ToListAsync() ?? Task.FromResult(new List<Category>()));
+                ViewBag.Categories = categories;
+                ViewBag.CurrentCategoryId = categoryId;
+
+                // Get books query
+                var booksQuery = context.Book
+                    .Include(b => b.Category)
+                    .AsQueryable();
+
+                // Filter by category if specified
+                if (categoryId.HasValue && categoryId > 0)
+                {
+                    booksQuery = booksQuery.Where(b => b.CategoryId == categoryId);
+                    ViewBag.CurrentCategory = categories.FirstOrDefault(c => c.CategoryId == categoryId);
+                }
+
+                // Execute query and get books
+                var books = await booksQuery.ToListAsync();
+                ViewBag.Books = books ?? new List<Book>();
+
+                return View();
+            }
+            catch (Exception ex)
+            {
+                // Log the error
+                Console.WriteLine($"Error in BookList: {ex.Message}");
+                // Initialize empty lists to prevent null reference exceptions
+                ViewBag.Categories = new List<Category>();
+                ViewBag.Books = new List<Book>();
+                return View();
+            }
         }
 
-        public IActionResult ShowBookListFromDb()
+        // Get books by category (API endpoint if needed)
+        public async Task<IActionResult> GetBooksByCategory(int categoryId)
         {
-            var books = _dbContext.Book.ToList();
-            ViewBag.Books = books;
-            return View();
+            var books = await context.Book
+                .Where(b => b.CategoryId == categoryId)
+                .Include(b => b.Category)
+                .Include(b => b.Author)
+                .ToListAsync();
 
+            return Json(books);
+        }
+        
+        // Read the PDF file of the book
+        public async Task<IActionResult> ReadPdf(int id)
+        {
+            var book = await context.Book.FindAsync(id);
+            if (book == null)
+            {
+                return NotFound();
+            }
+            return View(book);
         }
     }
 }

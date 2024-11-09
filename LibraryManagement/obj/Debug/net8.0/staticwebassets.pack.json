@@ -5,8 +5,12 @@
       "PackagePath": "staticwebassets\\LibraryManagement.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\book_images\\1.jpg",
-      "PackagePath": "staticwebassets\\book_images\\1.jpg"
+      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\book_images\\1.png",
+      "PackagePath": "staticwebassets\\book_images\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\book_pdfs\\OfMiceAndMen.pdf",
+      "PackagePath": "staticwebassets\\book_pdfs\\OfMiceAndMen.pdf"
     },
     {
       "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\carousel_images\\1.jpg",

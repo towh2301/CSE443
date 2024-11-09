@@ -1,0 +1,70 @@
+@model Book
+
+@{
+Layout = "_AppLayout";
+ViewData["Title"] = "Read " + Model.Title;
+}
+
+<style>
+    /* PDF View Page Styles */
+    .pdf-container {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive iframe for the PDF */
+    .pdf-container iframe {
+        width: 100%;
+        height: 800px;
+        border: none;
+    }
+
+    /* Download Button */
+    .download-btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 0.6rem 1.2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+        background-color: #0056b3;
+        color: #fff;
+    }
+
+    /* Heading Style */
+    .pdf-heading {
+        font-size: 1.75rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+    }
+</style>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <h1 class="pdf-heading">Reading: @Model.Title</h1>
+
+            <!-- PDF Container for Embedded PDF View -->
+            <div class="pdf-container">
+                <iframe
+                    src="@Model.Pdf"
+                    title="PDF Viewer">
+                </iframe>
+            </div>
+
+            <!-- Optional: Link to Download PDF -->
+            <div class="text-center">
+                <a href="@Model.Pdf" target="_blank" class="download-btn">
+                    Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
