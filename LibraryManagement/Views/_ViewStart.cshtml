@@ -1,3 +1,14 @@
-﻿@{
+﻿@using LibraryManagement.Models.Context
+@using Microsoft.EntityFrameworkCore
+@{
     Layout = "_Layout";
+    
+    // Get the DB context from services
+    var dbContext = Context.RequestServices.GetService<ApplicationDbContext>();
+    
+    // Get categories for the layout
+    if (dbContext != null)
+    {
+        ViewBag.Categories = await dbContext.Category.ToListAsync();
+    }
 }

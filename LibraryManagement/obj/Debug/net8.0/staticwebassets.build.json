@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8K+yVztblmPJRFCkRjf7hKgUFh46JfkyObmilIlzPEQ=",
+  "Hash": "5z1mQp0JZi9LrHcJIQfeVIYGso2Hu+e6gQ6rEDXKARU=",
   "Source": "LibraryManagement",
   "BasePath": "_content/LibraryManagement",
   "Mode": "Default",
@@ -55,12 +55,12 @@
       "OriginalItemSpec": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LibraryManagement.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\book_images\\1.jpg",
+      "Identity": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\book_images\\1.png",
       "SourceId": "LibraryManagement",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\",
       "BasePath": "_content/LibraryManagement",
-      "RelativePath": "book_images/1.jpg",
+      "RelativePath": "book_images/1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -71,7 +71,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\book_images\\1.jpg"
+      "OriginalItemSpec": "wwwroot\\book_images\\1.png"
+    },
+    {
+      "Identity": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\book_pdfs\\OfMiceAndMen.pdf",
+      "SourceId": "LibraryManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\",
+      "BasePath": "_content/LibraryManagement",
+      "RelativePath": "book_pdfs/OfMiceAndMen.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\book_pdfs\\OfMiceAndMen.pdf"
     },
     {
       "Identity": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\carousel_images\\1.jpg",

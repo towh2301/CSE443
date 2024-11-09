@@ -9,7 +9,7 @@
         <div class="col-lg-10 book-detail-container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="https://placehold.co/600x400" alt="Book Cover" class="img-fluid mb-3 book-cover">
+                    <img src="@Model.Avatar" alt="Book Cover" class="img-fluid mb-3 book-cover">
                 </div>
                 <div class="col-md-8">
                     <h1 class="mb-3 book-title">@Model.Title</h1>
@@ -20,7 +20,9 @@
                         <p><strong>Published Year:</strong> @Model.PublishedYear</p>
                         <p><strong>Genre:</strong> @Model.Category</p>
                     </div>
-                    <a href="#" class="btn btn-primary mt-4">Loan now</a>
+                    <!-- <a onclick="location.href='@Url.Action("ReadPdf", "Book", new { id = @Model.BookId })'" class="btn btn-primary mt-4">Read Now</a>-->
+                    <!-- Optional: Link to Download PDF -->
+                    <a href="@Model.Pdf" class="btn btn-primary mt-4">Read Now</a>
                 </div>
             </div>
         </div>
