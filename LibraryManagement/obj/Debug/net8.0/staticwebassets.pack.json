@@ -5,36 +5,8 @@
       "PackagePath": "staticwebassets\\LibraryManagement.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\book_images\\1.png",
-      "PackagePath": "staticwebassets\\book_images\\1.png"
-    },
-    {
       "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\book_pdfs\\OfMiceAndMen.pdf",
       "PackagePath": "staticwebassets\\book_pdfs\\OfMiceAndMen.pdf"
-    },
-    {
-      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\carousel_images\\1.jpg",
-      "PackagePath": "staticwebassets\\carousel_images\\1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\carousel_images\\2.jpg",
-      "PackagePath": "staticwebassets\\carousel_images\\2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\carousel_images\\3.jpg",
-      "PackagePath": "staticwebassets\\carousel_images\\3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\carousel_images\\4.jpg",
-      "PackagePath": "staticwebassets\\carousel_images\\4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\carousel_images\\5.jpg",
-      "PackagePath": "staticwebassets\\carousel_images\\5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\carousel_images\\6.jpg",
-      "PackagePath": "staticwebassets\\carousel_images\\6.jpg"
     },
     {
       "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\css\\site.css",
@@ -43,6 +15,34 @@
     {
       "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\images\\book_images\\1.png",
+      "PackagePath": "staticwebassets\\images\\book_images\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\images\\carousel_images\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel_images\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\images\\carousel_images\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel_images\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\images\\carousel_images\\3.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel_images\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\images\\carousel_images\\4.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel_images\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\images\\carousel_images\\5.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel_images\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\images\\carousel_images\\6.jpg",
+      "PackagePath": "staticwebassets\\images\\carousel_images\\6.jpg"
     },
     {
       "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\js\\site.js",

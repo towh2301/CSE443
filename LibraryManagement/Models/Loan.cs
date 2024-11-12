@@ -10,8 +10,8 @@ namespace LibraryManagement.Models
 
         // Foreign Key and Navigation Property for User
         [Required]
-        public int UserId { get; set; }
-        [ForeignKey("UserId")]
+        public string UserId { get; set; }
+        [ForeignKey("Id")]
         public User User { get; set; }                   // Each loan is associated with one user
 
         // Foreign Key and Navigation Property for Book

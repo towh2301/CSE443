@@ -1,16 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    Layout = "_AppLayout";
-}
-@model LibraryManagement.Models.Auth.LoginViewModel
+﻿@using LibraryManagement.ViewModels;
+@model LoginViewModel
 
 @{
+    Layout = "_AccountLayout";
     ViewBag.Title = "Login";
 }
 
-@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Login", "Account" ,new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
 
@@ -53,7 +49,8 @@
                             @Html.PasswordFor(m => m.Password, new { placeholder = "Enter password", @class = "form-control form-control-lg" })
                             @Html.ValidationMessageFor(m => m.Password)
                         </div>
-
+                        
+                        
 
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- Checkbox -->
@@ -61,11 +58,17 @@
                                 @Html.LabelFor(m => m.RememberMe, new { @class = "control-label" })
                                 @Html.CheckBoxFor(m => m.RememberMe, new { type = "checkbox", value = "", @class = "form-check-input me-2" })
                             </div>
-                            <a href="#!" class="text-body">Forgot password?</a>
+
+                            <!-- Verify Email -->
+                            <div class="float-end">
+                                <a asp-controller="Account" asp-action="VerifyEmail" class="text-decoration-none">
+                                    Forgot password?
+                                </a>
+                            </div>
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
+                            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
                                     style="padding-left: 2.5rem; padding-right: 2.5rem;">
                                 Login
                             </button>
@@ -73,11 +76,18 @@
                                 Don't have an account? <a asp-controller="Account" asp-action="Register" class="link-danger">Register</a>
                             </p>
                         </div>
-
+                        <div class="text-center">
+                            <a asp-controller="Home" asp-action="Index" class="text-decoration-none mt-3">Back</a>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
 
     </section>
+}
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
 }

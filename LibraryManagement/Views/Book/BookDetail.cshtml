@@ -20,9 +20,9 @@
                         <p><strong>Published Year:</strong> @Model.PublishedYear</p>
                         <p><strong>Genre:</strong> @Model.Category</p>
                     </div>
-                    <!-- <a onclick="location.href='@Url.Action("ReadPdf", "Book", new { id = @Model.BookId })'" class="btn btn-primary mt-4">Read Now</a>-->
+                    <a onclick="location.href='@Url.Action("ReadPdf", "Book", new { id = @Model.BookId })'" class="btn btn-primary mt-4">Read Now</a>
                     <!-- Optional: Link to Download PDF -->
-                    <a href="@Model.Pdf" class="btn btn-primary mt-4">Read Now</a>
+                    <a href="@Model.Pdf" class="btn btn-primary mt-4">Loan Now</a>
                 </div>
             </div>
         </div>

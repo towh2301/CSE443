@@ -1,10 +1,12 @@
-﻿using LibraryManagement.Models;
-using LibraryManagement.Models.Context;
+﻿using LibraryManagement.Data;
+using LibraryManagement.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagement.Controllers
 {
+    [Authorize(Policy = "UserOnly")]
     public class BookController(ApplicationDbContext context) : Controller
     {
         public IActionResult Index()
