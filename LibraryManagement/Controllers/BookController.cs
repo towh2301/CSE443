@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagement.Controllers
 {
-    [Authorize(Policy = "UserOnly")]
     public class BookController(ApplicationDbContext context) : Controller
     {
+        [Authorize]
         public IActionResult Index()
         {
             return View();

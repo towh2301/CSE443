@@ -1,7 +1,9 @@
 ﻿using LibraryManagement.Data;
 using LibraryManagement.Interfaces;
 using LibraryManagement.Models;
+using LibraryManagement.Validators;
 using LibraryManagement.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,13 +23,8 @@ namespace LibraryManagement.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-
             // Check if the user didn't login
-            //if (!User.Identity.IsAuthenticated)
-            //{
-            //    return RedirectToAction("Login");
-            //}
-            return RedirectToAction("Login");
+            return !User.Identity.IsAuthenticated ? RedirectToAction("Home") : RedirectToAction("Login");
         }
         
         [HttpGet]
@@ -43,6 +40,7 @@ namespace LibraryManagement.Controllers
         }
         
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
@@ -61,6 +59,7 @@ namespace LibraryManagement.Controllers
             }
             
             var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+            
             if (result.Succeeded)
             {
                 logger.LogInformation("User logged in successfully: {Email}", user.Email);
@@ -68,7 +67,6 @@ namespace LibraryManagement.Controllers
                 var token = jwtService.GenerateToken(user);
         
                 // Store token in cookie or session
-                // Option 1: Using Cookie
                 Response.Cookies.Append("JWTToken", token, new CookieOptions
                 {
                     HttpOnly = true,
@@ -77,8 +75,11 @@ namespace LibraryManagement.Controllers
                     Expires = DateTime.Now.AddHours(1)
                 });
         
-                // Option 2: Using Session
+                //Using Session
+                HttpContext.Session.SetString("UserId", user.Id);
+                HttpContext.Session.SetString("UserName", user.Email);
                 HttpContext.Session.SetString("JWTToken", token);
+                
                 
                 return RedirectToAction("Index", "Home");
             }
@@ -87,7 +88,6 @@ namespace LibraryManagement.Controllers
             ModelState.AddModelError(string.Empty, "Invalid login attempt.");
             return View(model);
         }
-
 
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)

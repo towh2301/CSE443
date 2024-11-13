@@ -8,7 +8,7 @@ public class LoginViewModel
     [Required(ErrorMessage = "Email is required.")]
     [DisplayName("Email")]
     [EmailAddress]
-    public String Email { get; set; }
+    public string Email { get; set; }
 
     [Required(ErrorMessage = "Password is required.")]
     [DataType(DataType.Password)]

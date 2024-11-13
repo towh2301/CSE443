@@ -2,21 +2,32 @@ using LibraryManagement.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using LibraryManagement.Interfaces;
+using LibraryManagement.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace LibraryManagement.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController(ILogger<HomeController> logger, IAuthService authService) : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
         public async Task<IActionResult> Index()
         {
-            return View();
+            if (!authService.IsUserLoggedIn())
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            logger.LogInformation("User {user} is logged in", authService.GetCurrentUserName() ?? "unknown");
+
+            var viewModel = new HomeViewModel
+            {
+                UserName = authService.GetCurrentUserName(),
+                UserRole = authService.GetUserRole(),
+                IsAuthenticated = authService.IsUserLoggedIn()
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
