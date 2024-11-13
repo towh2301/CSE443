@@ -30,7 +30,7 @@
   <ItemGroup>
     <Folder Include="assets\" />
     <Folder Include="Migrations\" />
-    <Folder Include="wwwroot\book_pdfs\" />
+    <Folder Include="wwwroot\pdfs\" />
   </ItemGroup>
 
 </Project>

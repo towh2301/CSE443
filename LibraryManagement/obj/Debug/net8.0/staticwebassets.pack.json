@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\LibraryManagement.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\book_pdfs\\OfMiceAndMen.pdf",
-      "PackagePath": "staticwebassets\\book_pdfs\\OfMiceAndMen.pdf"
-    },
-    {
       "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -275,6 +271,10 @@
     {
       "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\huybu\\Desktop\\dotnetproject\\LibraryManagement\\LibraryManagement\\wwwroot\\pdfs\\OfMiceAndMen.pdf",
+      "PackagePath": "staticwebassets\\pdfs\\OfMiceAndMen.pdf"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LibraryManagement.Microsoft.AspNetCore.StaticWebAssets.props",
