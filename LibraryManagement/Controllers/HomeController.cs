@@ -5,20 +5,23 @@ using System.Diagnostics;
 using LibraryManagement.Interfaces;
 using LibraryManagement.ViewModels;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibraryManagement.Controllers
 {
+    [Authorize]
     public class HomeController(ILogger<HomeController> logger, IAuthService authService) : Controller
     {
-
+        private readonly ILogger<HomeController> logger;
+        
         public async Task<IActionResult> Index()
         {
-            if (!authService.IsUserLoggedIn())
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            // if (!authService.IsUserLoggedIn())
+            // {
+            //     return RedirectToAction("Login", "Account");
+            // }
 
-            logger.LogInformation("User {user} is logged in", authService.GetCurrentUserName() ?? "unknown");
+            // logger.LogInformation("User {user} is logged in", authService.GetCurrentUserName() ?? "unknown");
 
             var viewModel = new HomeViewModel
             {

@@ -1,9 +1,6 @@
 ﻿using LibraryManagement.Data;
-using LibraryManagement.Interfaces;
 using LibraryManagement.Models;
-using LibraryManagement.Validators;
 using LibraryManagement.ViewModels;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,8 +11,6 @@ namespace LibraryManagement.Controllers
         ApplicationDbContext context,
         UserManager<User> userManager,
         SignInManager<User> signInManager,
-        RoleManager<IdentityRole> roleManager,
-        IJwtService jwtService,
         ILogger<AccountController> logger)
         : Controller
     {
@@ -40,7 +35,6 @@ namespace LibraryManagement.Controllers
         }
         
         [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
@@ -58,28 +52,15 @@ namespace LibraryManagement.Controllers
                 return View(model);
             }
             
-            var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+            var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, true);
             
             if (result.Succeeded)
             {
                 logger.LogInformation("User logged in successfully: {Email}", user.Email);
         
-                var token = jwtService.GenerateToken(user);
-        
-                // Store token in cookie or session
-                Response.Cookies.Append("JWTToken", token, new CookieOptions
-                {
-                    HttpOnly = true,
-                    Secure = true,
-                    SameSite = SameSiteMode.Strict,
-                    Expires = DateTime.Now.AddHours(1)
-                });
-        
                 //Using Session
                 HttpContext.Session.SetString("UserId", user.Id);
                 HttpContext.Session.SetString("UserName", user.Email);
-                HttpContext.Session.SetString("JWTToken", token);
-                
                 
                 return RedirectToAction("Index", "Home");
             }
@@ -98,7 +79,7 @@ namespace LibraryManagement.Controllers
                 FullName = model.FullName,
                 Email = model.Email,
                 UserName = model.Email,
-                Role = "user",
+                Role = "User",
                 PhoneNumber = "1234567890",
                 Address = "123 Main",
                 IsActive = true,
@@ -113,13 +94,16 @@ namespace LibraryManagement.Controllers
             var result = await userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                if (!roleManager.RoleExistsAsync("admin").GetAwaiter().GetResult())
-                {
-                    await roleManager.CreateAsync(new IdentityRole("admin"));
-                    await roleManager.CreateAsync(new IdentityRole("user"));
-                }
+                // Add to default role
+                userManager.AddToRoleAsync(user, "User");
                 
-                await userManager.AddToRoleAsync(user, user.Role);
+                // Send email confirmation
+                // var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
+                // // Send email with confirmation link
+                // var confirmationLink = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, token = token }, Request.Scheme);
+                // logger.LogInformation("Confirmation link: {ConfirmationLink}", confirmationLink);
+                
+                await userManager.AddToRoleAsync(user, "User");
                 return RedirectToAction("Login", "Account");
             }
                 
@@ -195,13 +179,9 @@ namespace LibraryManagement.Controllers
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
-            Response.Cookies.Delete("JWTToken");
-            HttpContext.Session.Remove("JWTToken");
-    
             return RedirectToAction("Login", "Account");
         }
-
-
+        
         public IActionResult Profile()
         {
             return View();

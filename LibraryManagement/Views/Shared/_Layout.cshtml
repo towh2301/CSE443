@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/LibraryManagement.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
 </head>
 <style>
     #btn-back-to-top {
@@ -19,60 +19,70 @@
     }
 </style>
 <body class="">
-    <header>
-        <nav>
-            <div class="topnav">
-                <img src="#" alt="Alternate Text" />
-                <div class="search-container">
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+<header>
+    <nav>
+        <div class="topnav">
+            <img src="#" alt="Alternate Text" />
+            <div class="search-container">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+        <div class="row container-fluid">
+            <div class="col flex d-flex flex-row">
+                <div class="navbar-collapse collapse d-sm-inline-flex">
+                    <ul class="navbar-nav flex-row justify-content-end flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
+                        </li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown button
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="BookList" onclick="selectCategory('All Books')">All Books</a>
+                                </li>
+                                @foreach (var category in ViewBag.Categories ?? new List<Category>())
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark @(ViewBag.CurrentCategoryId == category.CategoryId ? "active" : "")"
+                                           onclick="selectCategory('@category.Name')"
+                                           asp-controller="Book"
+                                           asp-action="BookList"
+                                           asp-route-categoryId="@category.CategoryId"
+                                           >@category.Name</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <partial name="_LoginPartial"/>
+                    </ul>
                 </div>
             </div>
-        </nav>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
-            <div class="row container-fluid">
-                <div class="col flex d-flex flex-row">
-                    <div class="navbar-collapse collapse d-sm-inline-flex">
-                        <ul class="navbar-nav flex-row justify-content-end flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="BookList">All Books</a>
-                            </li>
-                            @foreach (var category in ViewBag.Categories ?? new List<Category>())
-                            {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark @(ViewBag.CurrentCategoryId == category.CategoryId ? "active" : "")"
-                                   asp-controller="Book"
-                                   asp-action="BookList"
-                                   asp-route-categoryId="@category.CategoryId">@category.Name</a>
-                            </li>
-                            }
-                            <partial name="_LoginPartial"/>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        @await Component.InvokeAsync("Carousel")
-    </header>
-    <div class="container body-main-container">
-        @RenderBody()
-    </div>
+        </div>
+    </nav>
+    @await Component.InvokeAsync("Carousel")
+</header>
+<div class="container body-main-container">
+    @RenderBody()
+</div>
 
 <footer class="d-flex flex-md-row text-center text-md-start justify-content-between py-2 px-4 px-xl-4 mt-4 bg-primary footer">
-    <!-- Copyright -->
+    @* <!-- Copyright --> *@
     <div class="text-white mb-3 mb-md-0">
         Copyright © 2020. All rights reserved.
     </div>
-    <!-- Copyright -->
-    <!-- Right -->
+    @* <!-- Copyright --> *@
+    @* <!-- Right --> *@
     <div>
         <a href="#!" class="text-white me-4">
             <i class="fab fa-facebook-f"></i>
@@ -88,18 +98,25 @@
         </a>
     </div>
 </footer>
-    <!-- Back to top button -->
-    <button
-        type="button"
-        class="btn btn-danger btn-floating btn-lg"
-        id="btn-back-to-top"
-    >
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script>
+@* <!-- Back to top button --> *@
+<button
+    type="button"
+    class="btn btn-danger btn-floating btn-lg"
+    id="btn-back-to-top"
+>
+    <i class="fas fa-arrow-up"></i>
+</button>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script>
+        // Display item name when selected with ajax
+        function selectCategory(name) {
+            document.getElementById("dropdownMenuButton1").innerText = name;
+        }
+        
+        
+        
         //Get the button
         let mybutton = document.getElementById("btn-back-to-top");
 
@@ -125,7 +142,10 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+    
     </script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+    

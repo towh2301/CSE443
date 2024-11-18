@@ -9,33 +9,6 @@
 }
 
 <style>
-    /* Ensure the image fills the card width and maintains aspect ratio */
-    /*.card-img-top {*/
-    /*    cursor: pointer;*/
-    /*    height:35%; !* Set to 100% to fill the available card height *!*/
-    /*    object-fit: cover; !* Crop the image to fit without blank spaces *!*/
-    /*}*/
-
-    /*.card {*/
-    /*    transition: transform 0.3s ease, box-shadow 0.3s ease;*/
-    /*    height: fit-content; !* Make sure the card height is consistent *!*/
-    /*}*/
-
-    /*.card-body {*/
-    /*    padding: 1.25rem;*/
-    /*    height: fit-content;!* Add padding to the card body *!*/
-    /*}*/
-
-    /*.card:hover {*/
-    /*    transform: scale(1); !* Slightly grow the card *!*/
-    /*    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); !* Add a shadow effect *!*/
-    /*}*/
-
-    /*.card:hover .btn-primary {*/
-    /*    background-color: #0056b3; !* Darken the button on hover *!*/
-    /*}*/
-
-    /* General reset */
     * {
         margin: 0;
         padding: 0;
@@ -139,38 +112,41 @@
     }
 </style>
 
-<div class="container">
-    <h2 class="my-4">@(ViewBag.CurrentCategory?.Name ?? "All Books")</h2>
-
-    <div class="row flex-row align-content-center">
-        @if (ViewBag.Books != null && ViewBag.Books.Count > 0)
-        {
-            @foreach (var book in ViewBag.Books)
-            {
-            <div class="col-md-3 my-3">
-                <div class="book-list">
-                    <div class="card h-100">
-                        <img src="@book.Avatar" alt="Book Cover"
-                             onclick="location.href='@Url.Action("BookDetail", "Book", new { id = book.BookId })'">
-                        <div class="card-content">
-                            <h5>@book.Title</h5>
-                            <p>@book.Description</p>
-                            <div class="book-author">@book.Publisher</div>
-                            <div class="published-date">@book.PublishedYear?.ToString("yyyy")</div>
-                        </div>
-                        <a href="#" class="loan-button">Loan now</a>
-                    </div>
-                </div>
-            </div>
-            }
-        }
-        else
-        {
-        <div class="col-12">
-            <p class="text-center">No books found in this category.</p>
-        </div>
-        }
-    </div>
-</div>
+@* <div class="container"> *@
+@*     <h2 class="my-4">@(ViewBag.CurrentCategory?.Name ?? "All Books")</h2> *@
+@*     <div class="row flex-row align-content-center"> *@
+@*         @if (ViewBag.Books != null && ViewBag.Books.Count > 0) *@
+@*         { *@
+@*         @foreach (var book in ViewBag.Books) *@
+@*         { *@
+@*         <div class="col-md-3 my-3"> *@
+@*             <div class="book-list"> *@
+@*                 <div class="card h-100"> *@
+@*                     <img src="@book.Avatar" alt="Book Cover" *@
+@*                          onclick="location.href='@Url.Action("BookDetail", "Book", new { id = book.BookId })'"> *@
+@*                     <div class="card-content"> *@
+@*                         <h5>@book.Title</h5> *@
+@*                         <p>@book.Description</p> *@
+@*                         <div class="book-author">@book.Publisher</div> *@
+@*                         <div class="published-date">@book.PublishedYear?.ToString("yyyy")</div> *@
+@*                     </div> *@
+@*                     <a href="#" class="loan-button">Loan now</a> *@
+@*                 </div> *@
+@*             </div> *@
+@*         </div> *@
+@*         } *@
+@*         } *@
+@*         else *@
+@*         { *@
+@*         <div class="col-12"> *@
+@*             <p class="text-center">No books found in this category.</p> *@
+@*         </div> *@
+@*         } *@
+@*     </div> *@
+@* </div> *@
+<partial name="_BookListPartial"/>
+@section Scripts {
+    <script src="~/lib/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
+}
 
 

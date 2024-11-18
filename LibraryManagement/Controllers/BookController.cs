@@ -6,9 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagement.Controllers
 {
+    [Authorize]
     public class BookController(ApplicationDbContext context) : Controller
     {
-        [Authorize]
+
         public IActionResult Index()
         {
             return View();
@@ -29,7 +30,6 @@ namespace LibraryManagement.Controllers
             try
             {
                 // Get all categories for the navigation
-
                 var categories = await (context.Category?.ToListAsync() ?? Task.FromResult(new List<Category>()));
                 ViewBag.Categories = categories;
                 ViewBag.CurrentCategoryId = categoryId;
