@@ -11,11 +11,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    
     #btn-back-to-top {
         position: fixed;
         bottom: 20px;
         right: 20px;
         display: none;
+    }
+    .dropdown {
+        height: fit-content;
+    }
+    
+    #dropdownMenuButton1 {
+        height: fit-content;
+    }
+    
+    #dropdownMenuButton1:active {
+        outline: none;
+        border: none;
     }
 </style>
 <body class="">
@@ -36,34 +55,57 @@
             <div class="col flex d-flex flex-row">
                 <div class="navbar-collapse collapse d-sm-inline-flex">
                     <ul class="navbar-nav flex-row justify-content-end flex-grow-1">
+                        <partial name="_LoginAdminParitial"/>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-controller="Book" asp-action="BookList">All Books</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
-                        </li>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown button
-                            </button>
+                        @foreach (var category in ViewBag.Categories ?? new List<Category>())
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark @(ViewBag.CurrentCategoryId == category.CategoryId ? "active" : "")"
+                                   onclick="selectCategory('@category.Name')"
+                                   asp-controller="Book"
+                                   asp-action="BookList"
+                                   asp-route-categoryId="@category.CategoryId"
+                                   >@category.Name</a>
+                            </li>
+                        }
+                        @* <div class="dropdown"> *@
+                        @*     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> *@
+                        @*         All Books *@
+                        @*     </button> *@
                             <!-- Dropdown Menu -->
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="BookList" onclick="selectCategory('All Books')">All Books</a>
-                                </li>
-                                @foreach (var category in ViewBag.Categories ?? new List<Category>())
-                                {
-                                    <li class="nav-item">
-                                        <a class="nav-link text-dark @(ViewBag.CurrentCategoryId == category.CategoryId ? "active" : "")"
-                                           onclick="selectCategory('@category.Name')"
-                                           asp-controller="Book"
-                                           asp-action="BookList"
-                                           asp-route-categoryId="@category.CategoryId"
-                                           >@category.Name</a>
-                                    </li>
-                                }
-                            </ul>
-                        </div>
+                            @* <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"> *@
+                            @*     <li class="nav-item"> *@
+                            @*         <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="BookList" onclick="selectCategory('All Books')">All Books</a> *@
+                            @*     </li> *@
+                            @*     @foreach (var category in ViewBag.Categories ?? new List<Category>()) *@
+                            @*     { *@
+                            @*         <li class="nav-item"> *@
+                            @*             <a class="nav-link text-dark @(ViewBag.CurrentCategoryId == category.CategoryId ? "active" : "")" *@
+                            @*                onclick="selectCategory('@category.Name')" *@
+                            @*                asp-controller="Book" *@
+                            @*                asp-action="BookList" *@
+                            @*                asp-route-categoryId="@category.CategoryId" *@
+                            @*                >@category.Name</a> *@
+                            @*         </li> *@
+                            @*     } *@
+                            @* </ul> *@
+                            @* <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"> *@
+                            @*     <li class="nav-item"> *@
+                            @*         <a class="nav-link text-dark" onclick="loadBooks(null)">All Books</a> *@
+                            @*     </li> *@
+                            @*     @foreach (var category in ViewBag.Categories ?? new List<Category>()) *@
+                            @*     { *@
+                            @*     <li class="nav-item"> *@
+                            @*         <a class="nav-link text-dark @(ViewBag.CurrentCategoryId == category.CategoryId ? "active" : "")" *@
+                            @*            onclick="loadBooks('@category.CategoryId', '@category.Name')"> *@
+                            @*             @category.Name *@
+                            @*         </a> *@
+                            @*     </li> *@
+                            @*     } *@
+                            @* </ul> *@
+                        @* </div> *@
                         <partial name="_LoginPartial"/>
                     </ul>
                 </div>
@@ -114,8 +156,32 @@
         function selectCategory(name) {
             document.getElementById("dropdownMenuButton1").innerText = name;
         }
-        
-        
+
+        // Load books with AJAX
+        async function loadBooks(categoryId, name) {
+            document.getElementById("dropdownMenuButton1").innerText = name;
+            try {
+                // Build the URL with the category ID
+                const url = `/Book/BookList?categoryId=${categoryId ?? ''}`;
+
+                // Fetch the HTML content of the partial view
+                const response = await fetch(url, {
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest" // Signal that this is an AJAX request
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load books');
+                }
+
+                // Replace the book list container content with the fetched HTML
+                const html = await response.text();
+                document.getElementById("bookListContainer").innerHTML = html;
+            } catch (error) {
+                console.error("Error loading books:", error);
+            }
+        }
         
         //Get the button
         let mybutton = document.getElementById("btn-back-to-top");

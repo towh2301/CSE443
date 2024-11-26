@@ -25,4 +25,28 @@ public class BookViewModel
         public string Avatar { get; set; }                 // Cover image location on the server
         public string Pdf { get; set; }
         public ICollection<Loan> Loans { get; set; } = new List<Loan>();// Path for the online PDF version of the book
+        
+        // Method to convert BookViewModel to Book
+        public Book ToBook()
+        {
+            return new Book
+            {
+                BookId = BookId,
+                Title = Title,
+                Description = Description,
+                BookCode = BookCode,
+                Publisher = Publisher,
+                PublishedYear = PublishedYear,
+                CategoryId = CategoryId,
+                Category = Category,
+                AuthorId = AuthorId,
+                Author = Author,
+                TotalCopies = TotalCopies,
+                AvailableCopies = AvailableCopies,
+                CreatedDate = CreatedDate,
+                Avatar = Avatar,
+                Pdf = Pdf,
+                Loans = Loans
+            };
+        }
 }

@@ -28,8 +28,8 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 
 // Add Authorization
 builder.Services.AddAuthorizationBuilder()
-    .AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"))
-    .AddPolicy("UserOnly", policy => policy.RequireRole("User"));
+    .AddPolicy("AdminOnly", policy => policy.RequireRole("admin"))
+    .AddPolicy("UserOnly", policy => policy.RequireRole("user"));
 
 // Add Identity Cookie
 builder.Services.ConfigureApplicationCookie(options =>
@@ -41,36 +41,17 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.SlidingExpiration = true;
 });
 
-// // Add JWT Authentication
-// builder.Services.AddAuthentication(options =>
-// {
-//     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-//     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-// })
-// .AddJwtBearer(options => 
-// {
-//     options.TokenValidationParameters = new TokenValidationParameters
-//     {
-//         ValidateIssuer = true,
-//         ValidateAudience = true,
-//         ValidIssuer = builder.Configuration["Jwt:Issuer"],
-//         ValidAudience = builder.Configuration["Jwt:Audience"],
-//         IssuerSigningKey = new SymmetricSecurityKey(
-//             Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-//     };
-// });
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllersWithViews();
 
 // Services
 builder.Services.AddScoped<IUserService, UserService>();
-// builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 // Repositories
 builder.Services.AddScoped<ILoanRepository, LoanRepository>();
-builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddDistributedMemoryCache();
@@ -82,9 +63,6 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-
-
-
 
 var app = builder.Build();
 
@@ -105,8 +83,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
 
-
-// app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
 app.MapControllerRoute(
     name: "default",

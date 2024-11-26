@@ -1,5 +1,7 @@
 ﻿using LibraryManagement.Data;
+using LibraryManagement.Interfaces;
 using LibraryManagement.Models;
+using LibraryManagement.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace LibraryManagement.Controllers
 {
     [Authorize]
-    public class BookController(ApplicationDbContext context) : Controller
+    public class BookController(ApplicationDbContext context, ILogger<BookController> logger, IBookService bookService) : Controller
     {
 
         public IActionResult Index()
@@ -27,6 +29,7 @@ namespace LibraryManagement.Controllers
 
         public async Task<IActionResult> BookList(int? categoryId = null)
         {
+            logger.LogInformation("Getting books for category {categoryId}", categoryId);
             try
             {
                 // Get all categories for the navigation
@@ -34,21 +37,53 @@ namespace LibraryManagement.Controllers
                 ViewBag.Categories = categories;
                 ViewBag.CurrentCategoryId = categoryId;
 
-                // Get books query
-                var booksQuery = context.Book
-                    .Include(b => b.Category)
-                    .AsQueryable();
+                // Get books
+                var booksQuery = bookService.getBooksAsyncQueryable();
+                
+                // var bookList = await bookService.GetBooksAsync();
 
                 // Filter by category if specified
-                if (categoryId.HasValue && categoryId > 0)
+                if (categoryId > 0)
                 {
                     booksQuery = booksQuery.Where(b => b.CategoryId == categoryId);
                     ViewBag.CurrentCategory = categories.FirstOrDefault(c => c.CategoryId == categoryId);
                 }
 
                 // Execute query and get books
-                var books = await booksQuery.ToListAsync();
-                ViewBag.Books = books ?? new List<Book>();
+                var books = booksQuery.ToList();
+                
+                logger.LogInformation("Found {bookCount} books", books);
+                
+                // Parse List<Books> to List<BookViewModel>
+                var bookViewModels = books.Select(b => new BookViewModel
+                {
+                    BookId = b.BookId,
+                    Title = b.Title,
+                    Description = b.Description,
+                    BookCode = b.BookCode,
+                    Publisher = b.Publisher,
+                    PublishedYear = b.PublishedYear,
+                    CategoryId = b.CategoryId,
+                    Category = b.Category,
+                    AuthorId = b.AuthorId,
+                    Author = b.Author,
+                    TotalCopies = b.TotalCopies,
+                    AvailableCopies = b.AvailableCopies,
+                    CreatedDate = b.CreatedDate,
+                    Avatar = b.Avatar,
+                    Pdf = b.Pdf,
+                    Loans = b.Loans
+                }).ToList();
+                
+                ViewBag.Books = bookViewModels ?? [];
+                
+                logger.LogInformation("Found {bookCount} book view model", bookViewModels.Count);
+                
+                // Return the partial view for AJAX requests
+                if (Request.Headers.XRequestedWith == "XMLHttpRequest")
+                {
+                    return PartialView("_BookListPartial", bookViewModels);
+                }
 
                 return View();
             }

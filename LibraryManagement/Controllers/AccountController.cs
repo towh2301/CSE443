@@ -95,15 +95,14 @@ namespace LibraryManagement.Controllers
             if (result.Succeeded)
             {
                 // Add to default role
-                userManager.AddToRoleAsync(user, "User");
+                await userManager.AddToRoleAsync(user, "user");
                 
                 // Send email confirmation
-                // var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
-                // // Send email with confirmation link
-                // var confirmationLink = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, token = token }, Request.Scheme);
-                // logger.LogInformation("Confirmation link: {ConfirmationLink}", confirmationLink);
-                
-                await userManager.AddToRoleAsync(user, "User");
+                var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
+                // Send email with confirmation link
+                var confirmationLink = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, token = token }, Request.Scheme);
+                logger.LogInformation("Confirmation link: {ConfirmationLink}", confirmationLink);
+
                 return RedirectToAction("Login", "Account");
             }
                 
@@ -111,6 +110,7 @@ namespace LibraryManagement.Controllers
             {
                 ModelState.AddModelError(string.Empty, error.Description);
             }
+            await context.SaveChangesAsync();
             return View(model);
         }
         

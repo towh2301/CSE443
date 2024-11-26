@@ -1,10 +1,9 @@
-﻿@*
+﻿@using LibraryManagement.ViewModels
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
     Layout = "_Layout";
-}
-@{
     ViewData["Title"] = ViewBag.CurrentCategory?.Name ?? "All Books";
 }
 
@@ -144,9 +143,12 @@
 @*         } *@
 @*     </div> *@
 @* </div> *@
-<partial name="_BookListPartial"/>
+@* <partial name="_BookListPartial" for="ViewBag.Books as List<BookViewModel>"/> *@
+@await Html.PartialAsync("_BookListPartial", ViewBag.Books as List<BookViewModel>)
+
 @section Scripts {
     <script src="~/lib/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
 }
+
 
 

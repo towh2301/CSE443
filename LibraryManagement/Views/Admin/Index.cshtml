@@ -2,7 +2,11 @@
     Layout = "_AdminLayout";
     ViewData["Title"] = "Admin Dashboard";
 }
-
+<style>
+    #main-content {
+        margin-bottom: 50px;
+    }
+</style>
 <div class="row">
     <!-- Sidebar -->
     <nav id="sidebar"
@@ -10,23 +14,18 @@
         <div class="position-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="#" data-url="/Admin/Dashboard" data-target="#main-content">
                         <i class="bi bi-house-door"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="#" data-url="/Admin/UserView" data-target="#main-content">
                         <i class="bi bi-people"></i> Users
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-file-earmark-text"></i> Reports
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-gear"></i> Settings
+                    <a class="nav-link" data-url="/Admin/BookView" asp-action="BookView" asp-controller="Admin" data-target="#main-content">
+                        <i class="bi bi-file-earmark-text"></i> Books
                     </a>
                 </li>
             </ul>
@@ -34,22 +33,59 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-                <div class="btn-group me-2">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                </div>
-                <button type="button" class="btn btn-sm btn-primary">
-                    <i class="bi bi-plus-circle"></i> Add New
-                </button>
-            </div>
-        </div>
-
-        <h2>Section Title</h2>
-        <div class="table-responsive">
-        </div>
+    @* <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"> *@
+    @*     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"> *@
+    @*         <h1 class="h2">Dashboard</h1> *@
+    @*         <div class="btn-toolbar mb-2 mb-md-0"> *@
+    @*             <div class="btn-group me-2"> *@
+    @*                 <button type="button" class="btn btn-sm btn-outline-secondary">Share</button> *@
+    @*                 <button type="button" class="btn btn-sm btn-outline-secondary">Export</button> *@
+    @*             </div> *@
+    @*             <button type="button" class="btn btn-sm btn-primary"> *@
+    @*                 <i class="bi bi-plus-circle"></i> Add New *@
+    @*             </button> *@
+    @*         </div> *@
+    @*     </div> *@
+    @* *@
+    @*     <h2>Section Title</h2> *@
+    @*     <!-- Main Content --> *@
+    @* *@
+    @* </main> *@
+    <!-- Main Content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main-content">
+        <!-- Content will be loaded here -->
+        This is main content
     </main>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('.nav-link');
+
+        links.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const url = this.getAttribute('data-url');
+                const target = document.querySelector(this.getAttribute('data-target'));
+
+                if (url && target) {
+                    fetch(url)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.text();
+                        })
+                        .then(html => {
+                            target.innerHTML = html;
+                        })
+                        .catch(error => {
+                            console.error('There has been a problem with your fetch operation:', error);
+                            target.innerHTML = '<p class="text-danger">Error loading content.</p>';
+                        });
+                }
+            });
+        });
+    });
+</script>
+
