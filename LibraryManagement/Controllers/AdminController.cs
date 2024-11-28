@@ -24,6 +24,22 @@ namespace LibraryManagement.Controllers
             return View();
         }
 
+        // User View
+        [HttpGet]
+        public async Task<IActionResult> UserView()
+        {
+            var users = await context.Users.ToListAsync();
+            
+            // Parse List<User> to List<UserViewModel>
+            var adminViewModel = new AdminViewModel
+            {
+                Users = users
+            };
+            
+            return PartialView("~/Views/Shared/Components/AdminDashboard/_AdminUser.cshtml", adminViewModel);
+        }
+        
+        
         [HttpGet]
         public async Task<IActionResult> BookView(int? categoryId = null)
         {
@@ -35,7 +51,7 @@ namespace LibraryManagement.Controllers
                 var booksQuery = bookService.getBooksAsyncQueryable();
                 
                 // Create admin book view model
-                var adminBookViewModel = new AdminBookViewModel
+                var adminBookViewModel = new AdminViewModel
                 {
                     Books = booksQuery.ToList(),
                     Categories = categories.ToList(),
@@ -92,48 +108,5 @@ namespace LibraryManagement.Controllers
             }
             
         }
-        
-        // Add book method
-        [HttpPost]
-        public async Task<IActionResult> AddBook(BookViewModel book)
-        {
-            var categories = await bookService.GetCategoriesAsync();
-            var authors = await bookService.GetAuthorsAsync();
-            var booksQuery = bookService.getBooksAsyncQueryable();
-                
-            // Create admin book view model
-            var adminBookViewModel = new AdminBookViewModel
-            {
-                Books = booksQuery.ToList(),
-                Categories = categories.ToList(),
-                Authors = authors.ToList()
-            };
-                
-            try
-            {
-                // Convert BookViewModel to Book entity
-                var myBook = book.ToBook();
-
-                // Add book to database
-                context.Book.Add(myBook);
-                await context.SaveChangesAsync();
-
-                // Redirect back to the BookView
-               // return RedirectToAction("BookView");
-            }
-            catch (Exception ex)
-            {
-                // Log the error for debugging
-                Console.WriteLine($"Error in AddBook: {ex.Message}");
-
-                // Redirect back with an error message
-                TempData["Error"] = "An error occurred while adding the book.";
-                // return RedirectToAction("BookView");
-            }
-
-            return RedirectToAction("Index", "Admin");
-        }
-        
-        
     }
 }

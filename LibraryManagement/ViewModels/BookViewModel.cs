@@ -49,4 +49,48 @@ public class BookViewModel
                 Loans = Loans
             };
         }
+
+        public Book ToNewBook()
+        {
+            return new Book
+            {
+                BookId = BookId,
+                Title = Title,
+                Description = Description,
+                BookCode = BookCode,
+                Publisher = Publisher,
+                PublishedYear = PublishedYear,
+                CategoryId = CategoryId,
+                Category = Category,
+                AuthorId = AuthorId,
+                Author = Author,
+                TotalCopies = TotalCopies,
+                AvailableCopies = TotalCopies,
+                CreatedDate = CreatedDate,
+                Avatar = Avatar,
+                Pdf = Pdf,
+                Loans = Loans
+            };
+        }
+        
+        // Method to Edit Book From BookViewModel
+        public Book EditBook(Book currentBook, BookViewModel book)
+        {
+            currentBook.Title = book.Title;
+            currentBook.Description = book.Description;
+            currentBook.BookCode = book.BookCode;
+            currentBook.Publisher = book.Publisher;
+            currentBook.PublishedYear = book.PublishedYear;
+            currentBook.CategoryId = book.CategoryId;
+            currentBook.Category = book.Category;
+            currentBook.AuthorId = book.AuthorId;
+            currentBook.Author = book.Author;
+            currentBook.TotalCopies = book.TotalCopies;
+            currentBook.AvailableCopies = book.AvailableCopies;
+            currentBook.CreatedDate = book.CreatedDate;
+            currentBook.Avatar = book.Avatar;
+            currentBook.Pdf = book.Pdf;
+            currentBook.Loans = book.Loans;
+            return currentBook;
+        }
 }

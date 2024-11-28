@@ -2,11 +2,29 @@
     Layout = "_Layout";
     ViewData["Title"] = "Home Page";
 }
-<div class="text-center">
-    @if (User.Identity.IsAuthenticated)
-    {
-        <h1 class="display-4">Welcome @User.Identity.Name </h1>
-    }
-    <h1 class="display-4">Welcome </h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <!-- Hero Section -->
+<div class="hero-section text-center">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-8">
+                <h1 class="display-4 fw-bold">Welcome to Our Library Management System</h1>
+                <p class="mt-3 lead text-muted">
+                    Streamline your library operations with our modern and user-friendly platform. Manage books, members, borrowing, and returns seamlessly, all in one place.
+                </p>
+                <ul class="list-inline mt-4">
+                    <li class="list-inline-item">
+                        <span class="badge bg-primary text-white fs-5 px-3 py-2">Easy to Use</span>
+                    </li>
+                    <li class="list-inline-item">
+                        <span class="badge bg-success text-white fs-5 px-3 py-2">Secure</span>
+                    </li>
+                    <li class="list-inline-item">
+                        <span class="badge bg-info text-white fs-5 px-3 py-2">Efficient</span>
+                    </li>
+                </ul>
+                <a href="#features" class="btn btn-primary btn-lg mt-4">Explore Features</a>
+            </div>
+        </div>
+    </div>
 </div>
+

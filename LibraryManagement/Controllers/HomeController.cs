@@ -12,9 +12,7 @@ namespace LibraryManagement.Controllers
     [Authorize]
     public class HomeController(ILogger<HomeController> logger, IAuthService authService) : Controller
     {
-        private readonly ILogger<HomeController> logger;
-        
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             // if (!authService.IsUserLoggedIn())
             // {

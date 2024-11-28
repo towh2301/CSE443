@@ -1,0 +1,125 @@
+@model LibraryManagement.ViewModels.AdminViewModel
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Manage Users</h2>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+            <i class="bi bi-plus-circle"></i> Add New User
+        </button>
+    </div>
+
+    <table class="table table-striped" id="user-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Fullname</th>
+                <th>Email</th>
+                <th>Created Date</th>
+                <th>Status</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        @{ var i = 1; }
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@user.FullName</td>
+                <td>@user.Email</td>
+                <td>@user.CreatedDate</td>
+                <td>@(user.Status == 1 ? "Active" : "Inactive")</td>
+                <td>@user.Role</td>
+                <td>
+                    <button class="btn btn-sm btn-warning edit-user-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editUserModal"
+                            data-id="@user.Id"
+                            data-fullname="@user.FullName"
+                            data-status="@user.Status">
+                        <i class="bi bi-pencil-square"></i> Edit
+                    </button>
+                    <button class="btn btn-sm btn-danger delete-user-btn"
+                            data-id="@user.Id" data-email="@user.Email">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                </td>
+            </tr>
+            i++;
+        }
+        </tbody>
+    </table>
+</div>
+
+<!-- Add User Modal -->
+<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="createUserForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createUserModalLabel">Create New User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="userName" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="userEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="userPassword" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                        <span id="passwordMismatch" class="text-danger" style="display: none;">Passwords do not match.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary create-user-btn">Create User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Edit User Modal -->
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="editUserForm">
+                
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input type="hidden" id="editUserId"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editFullname" class="form-label">Fullname</label>
+                        <input type="text" class="form-control" id="editFullname" name="fullname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editUserEmail" class="form-label">Email</label>
+                        <input type="text" class="form-control"id="editUserEmail" name="Email" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning confirm-edit-user-btn">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

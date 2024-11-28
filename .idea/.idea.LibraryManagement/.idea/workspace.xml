@@ -11,31 +11,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6f1fa0-b583-439c-a516-8b15053fd5cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Services/BookService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/ViewModels/AdminBookViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminBook.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminUser.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_BookListAdminPartial.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_LoginAdminParitial.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LibraryManagement/ViewModels/UserUpdateModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LibraryManagement/ViewModels/UserViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LibraryManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LibraryManagement/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Controllers/AccountController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Controllers/AdminController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Controllers/BookController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Interfaces/IBookRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Interfaces/IBookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Repositories/BookRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Interfaces/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Interfaces/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/ViewModels/AdminBookViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/ViewModels/AdminViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/ViewModels/BookViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/ViewModels/BookViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Admin/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Admin/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Book/BookList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Book/BookList.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/Carousel/Default.cshtml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_AdminLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_AdminLayout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminBook.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminBook.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminUser.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminUser.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.exe" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.pdb" afterDir="false" />
@@ -63,10 +59,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/17367ddeb3b959bda6d8fbc6369cd65a8e6ee9d124ec6f9b884b1182ce76a8/RazorPage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6888d268113295cfcdc76a84c4c278e42377eae2c9e6648376871d19143c89c4/RazorPageBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d382df578ec93391918cfaa4ce7f4b8f35c9aed1241d6556dc9be26df13c/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8e25cce28490c87faaf15522967e96692c1829b521f6b7a4fc8bde524eec/IdentityRole.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d8d9726f3deb1bbf671f5b791e4dc3e0338219a996f439ad2a69024b825c60/UserManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ddfe5f2cab585726db85fc046e76ea5725f69d647c242379a11c6da8029c727/ClaimsPrincipal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e84b98cd896ae9718874819e92996ce596e196396a7986c8a27c4a7d913ab5b/Request.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f128dae15ab34ce7f3394ecb1e2167e06f84d30f53fd1c2deedc925337e965/HttpContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9342fb513b7b524925c79d9822cd3ecaf072c50231aa3b469875f4c2cdf/IdentityDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LibraryManagement/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -198,6 +196,11 @@
       <workItem from="1731993892665" duration="5670000" />
       <workItem from="1732522867211" duration="320000" />
       <workItem from="1732525598546" duration="7000" />
+      <workItem from="1732584130871" duration="11043000" />
+      <workItem from="1732642987113" duration="1902000" />
+      <workItem from="1732673089036" duration="2734000" />
+      <workItem from="1732686872277" duration="303000" />
+      <workItem from="1732723461418" duration="19877000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <option name="closed" value="true" />
@@ -296,7 +299,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LibraryManagement/Views/Shared/_Layout.cshtml</url>
-          <line>76</line>
+          <line>82</line>
           <properties isMultiMethodBreakpoint="true">
             <option name="multiMethodBreakpoint" value="true" />
           </properties>

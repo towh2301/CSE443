@@ -14,11 +14,6 @@
         <div class="position-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#" data-url="/Admin/Dashboard" data-target="#main-content">
-                        <i class="bi bi-house-door"></i> Dashboard
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#" data-url="/Admin/UserView" data-target="#main-content">
                         <i class="bi bi-people"></i> Users
                     </a>
@@ -28,36 +23,24 @@
                         <i class="bi bi-file-earmark-text"></i> Books
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-url="/Admin/LoanView" asp-action="BookView" asp-controller="Admin" data-target="#main-content">
+                        <i class="bi bi-file-earmark-text"></i> Loans
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
-
-    <!-- Main Content -->
-    @* <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"> *@
-    @*     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"> *@
-    @*         <h1 class="h2">Dashboard</h1> *@
-    @*         <div class="btn-toolbar mb-2 mb-md-0"> *@
-    @*             <div class="btn-group me-2"> *@
-    @*                 <button type="button" class="btn btn-sm btn-outline-secondary">Share</button> *@
-    @*                 <button type="button" class="btn btn-sm btn-outline-secondary">Export</button> *@
-    @*             </div> *@
-    @*             <button type="button" class="btn btn-sm btn-primary"> *@
-    @*                 <i class="bi bi-plus-circle"></i> Add New *@
-    @*             </button> *@
-    @*         </div> *@
-    @*     </div> *@
-    @* *@
-    @*     <h2>Section Title</h2> *@
-    @*     <!-- Main Content --> *@
-    @* *@
-    @* </main> *@
     <!-- Main Content -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main-content">
         <!-- Content will be loaded here -->
         This is main content
     </main>
 </div>
+@* Add ajax script *@
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
+
     document.addEventListener('DOMContentLoaded', () => {
         const links = document.querySelectorAll('.nav-link');
 
@@ -87,5 +70,423 @@
             });
         });
     });
+    
+    // function to load content
+    function loadContent(url, target) {
+        if (url && target) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    target.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                    target.innerHTML = '<p class="text-danger">Error loading content.</p>';
+                });
+        }
+    }
+    
+    // Ajax scripts for Admin
+    $(document).ready(function () {
+        // Delete Users
+        $(document).on('click', '.delete-user-btn', function () {
+            const userEmail = $(this).data('email');
+            const url = `/Account/DeleteAccount/?userEmail=${encodeURIComponent(userEmail)}`;
+
+            if (confirm('Are you sure you want to delete this user?')) {
+                $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                    data: {
+                        email: userEmail
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            alert('User deleted successfully.');
+
+                            // Call loadContent with actual URL and target
+                            loadContent('/Admin/UserView', document.querySelector('#main-content'));
+                            
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('Error deleting user.');
+                    }
+                });
+            }
+        });
+        
+        // Delete Books
+        $(document).on('click', '.delete-book-btn', function () {
+            const bookId = $(this).data('id');
+            console.log(bookId);
+            const url = `/Book/DeleteBook/?bookId=${encodeURIComponent(bookId)}`;
+
+            if (confirm('Are you sure you want to delete this book?')) {
+                $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Book deleted successfully.');
+
+                            // Call loadContent with actual URL and target
+                            loadContent('/Admin/BookView', document.querySelector('#main-content'));
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('Error deleting book.');
+                    }
+                });
+            }
+        });
+        
+        
+        // Delete Loans
+        $(document).on('click', '.delete-loan-btn', function () {
+            const loanId = $(this).data('id');
+            const url = `/Loan/DeleteLoan/?loanId=${encodeURIComponent(loanId)}`;
+
+            if (confirm('Are you sure you want to delete this loan?')) {
+                $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Loan deleted successfully.');
+
+                            // Call loadContent with actual URL and target
+                            loadContent('/Admin/LoanView', document.querySelector('#main-content'));
+                        } else {
+                            alert('Error deleting loan.');
+                        }
+                    },
+                    error: function () {
+                        alert('Error deleting loan.');
+                    }
+                });
+            }
+        });
+        
+        
+        // Edit Users
+        $(document).on('click', '.confirm-edit-user-btn', function () {
+            let userData = {
+                Id: $('#editUserId').val(),
+                FullName: $('#editFullname').val().trim(),
+                Email: $('#editUserEmail').val().trim(),
+            };
+
+            $.ajax({
+                url: `/Account/EditUser`,
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify(userData),
+                success: function (response) {
+                    if (response.success) {
+                        alert('User updated successfully!');
+                        $('#editUserModal').modal('hide');
+
+                        // Call loadContent with actual URL and target
+                        loadContent('/Admin/UserView', document.querySelector('#main-content'));
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                },
+                error: function () {
+                    alert('Error loading user.');
+                }
+            });
+        });
+        
+        // Fetch user details
+        $(document).on('click', '.edit-user-btn', function () {
+            const userId = $(this).data('id');
+            console.log(userId);
+            // Fetch user details using the userId
+            fetchUserDetails(userId);
+        });
+        
+        function fetchUserDetails(userId) {
+            const url = `/Account/GetAccountDetails/?userId=${encodeURIComponent(userId)}`;
+            
+            $.ajax({
+                url: url,
+                method: 'GET',
+                success: function(response) {
+                    if (response.success) {
+                        let user = response.user;
+                        
+                        console.log(user);
+                        console.log(user.id);
+                    
+                        // Populate the form fields
+                        $('#editUserId').val(user.id);
+                        $('#editFullname').val(user.fullName);
+                        $('#editUserEmail').val(user.email);
+                        $('#editUserPassword').val(user.password);
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function(error) {
+                    console.error('Error fetching user details:', error);
+                }
+            });
+        }
+        
+
+        // Edit Books
+        $(document).on('click', '.edit-book-btn', function () {
+            const bookId = $(this).data('id');
+            console.log(bookId);
+            // Fetch book details using the bookId
+            fetchBookDetails(bookId);
+        });
+
+        function fetchBookDetails(bookId) {
+            const url = `/Book/GetBookDetails/?bookId=${encodeURIComponent(bookId)}`;
+            
+            $.ajax({
+                url: url,
+                method: 'GET',
+                success: function(response) {
+                    if (response.success) {
+                        let book = response.book;
+                        
+                        console.log(book);
+                        const date = new Date(book.publishedYear);
+                        const formattedDate = date.toISOString().slice(0, 10);
+                    
+                        // Populate the form fields
+                        $('#editBookId').val(book.bookId);
+                        $('#editBookTitle').val(book.title);
+                        $('#editBookDescription').val(book.description);
+                        $('#editBookCode').val(book.bookCode);
+                        $('#editBookPublisher').val(book.publisher);
+                        $('#editPublishedYear').val(formattedDate);
+                        $('#editBookCategory').val(book.categoryId);
+                        $('#editBookAuthor').val(book.authorId);
+                        $('#editTotalCopies').val(book.totalCopies);
+                        $('#editAvailableCopies').val(book.availableCopies);
+                        $('#editAvatar').val(book.avatar);
+                        $('#editPdf').val(book.pdf);
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function(error) {
+                    console.error('Error fetching book details:', error);
+                }
+            });
+        }
+        
+        // Edit Books
+        $(document).on('click', '.confirm-edit-book-btn', function () {
+            const bookData = {
+                BookId: $('#editBookId').val(),
+                Title: $('#editBookTitle').val().trim(),
+                Description: $('#editBookDescription').val().trim(),
+                BookCode: $('#editBookCode').val().trim(),
+                Publisher: $('#editBookPublisher').val().trim(),
+                PublishedYear: $('#editPublishedYear').val(),
+                CategoryId: $('#editBookCategory').find(":selected").val(),
+                AuthorId: $('#editBookAuthor').find(":selected").val(),
+                TotalCopies: $('#editTotalCopies').val().trim(),
+                AvailableCopies: $('#editAvailableCopies').val().trim(),
+                Avatar: $('#editAvatar').val(),
+                Pdf: $('#editPdf').val()
+            };
+
+            $.ajax({
+                url: '/Book/EditBook',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(bookData),
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        $('#editBookModal').modal('hide');
+
+                        // Call loadContent with actual URL and target
+                        loadContent('/Admin/BookView', document.querySelector('#main-content'));
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                },
+                error: function () {
+                    alert('Error adding book.');
+                }
+            });
+        });
+        
+        
+        // Edit Loans
+        $(document).on('click', '.edit-loan-btn', function () {
+            const loanId = $(this).data('id');
+            const url = `/Loan/EditLoan/${loanId}`;
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    loanId: loanId,
+                    bookId: bookId,
+                    userId: userId,
+                    loanDate: loanDate,
+                    returnDate: returnDate,
+                },
+                success: function (response) {
+                    $('#editLoanModal .modal-body').html(response);
+                    $('#editLoanModal').modal('show');
+                },
+                error: function () {
+                    alert('Error loading loan.');
+                }
+            });
+        });
+        
+        
+        // Create Users
+        $(document).on('click', '.create-user-btn', function () {
+            const userName = $('#userName').val().trim();
+            const userEmail = $('#userEmail').val().trim();
+            const userPassword = $('#userPassword').val();
+            const confirmPassword = $('#confirmPassword').val();
+
+            // Reset error message
+            $('#passwordMismatch').hide();
+
+            // Validate form fields
+            if (!userName || !userEmail || !userPassword || !confirmPassword) {
+                alert('All fields are required.');
+                return;
+            }
+
+            if (userPassword !== confirmPassword) {
+                $('#passwordMismatch').show();
+                return;
+            }
+
+            // Create the user object
+            const userViewModel = {
+                FullName: userName,
+                Email: userEmail,
+                Password: userPassword
+            };
+
+            const url = `/Account/CreateAccount`;
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(userViewModel),
+                success: function (response) {
+                    if (response.success) {
+                        alert('User created successfully!');
+                        $('#addUserModal').modal('hide');
+                        
+                        // Call loadContent with actual URL and target
+                        loadContent('/Admin/UserView', document.querySelector('#main-content'));
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                },
+                error: function () {
+                    alert('Error creating user.');
+                }
+            });
+        });
+        
+        
+        // Create Books
+        $(document).on('click', '.add-book-btn', function () {
+            const bookData = {
+                Title: $('#bookTitle').val().trim(),
+                Description: $('#bookDescription').val().trim(),
+                BookCode: $('#bookCode').val().trim(),
+                Publisher: $('#bookPublisher').val().trim(),
+                PublishedYear: $('#publishedYear').val(),
+                CategoryId: $('#addBookCategory').find(":selected").val(),
+                AuthorId: $('#addBookAuthor').find(":selected").val(),
+                TotalCopies: $('#totalCopies').val().trim(),
+                Avatar: $('#avatar').val(),
+                Pdf: $('#pdf').val()
+            };
+
+            $.ajax({
+                url: '/Book/AddBook',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(bookData),
+                success: function (response) {
+                    if (response.success) {
+                        alert('Book added successfully!');
+                        $('#addBookModal').modal('hide');
+
+                        // Call loadContent with actual URL and target
+                        loadContent('/Admin/BookView', document.querySelector('#main-content'));
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                },
+                error: function () {
+                    alert('Error adding book.');
+                }
+            });
+        });
+
+
+        // Create Loans
+        $(document).on('click', '.create-loan-btn', function () {
+            const url = `/Loan/CreateLoan`;
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    bookId: bookId,
+                    userId: userId,
+                    loanDate: loanDate,
+                    returnDate: returnDate,
+                },
+                success: function (response) {
+                    $('#createLoanModal .modal-body').html(response);
+                    $('#createLoanModal').modal('show');
+                },
+                error: function () {
+                    alert('Error creating loan.');
+                }
+            });
+        });
+        
+        // Reload the page when modal is closed
+        function reloadUserView() {
+            const container = document.getElementById('bookContent');
+            const url = '/Admin/UserView';
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .catch(error => {
+                    console.error('Error reloading book view:', error);
+                });
+        }
+    });
+
 </script>
 

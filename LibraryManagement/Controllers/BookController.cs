@@ -1,4 +1,5 @@
-﻿using LibraryManagement.Data;
+﻿using Azure.Core;
+using LibraryManagement.Data;
 using LibraryManagement.Interfaces;
 using LibraryManagement.Models;
 using LibraryManagement.ViewModels;
@@ -25,6 +26,25 @@ namespace LibraryManagement.Controllers
                 return NotFound();
             }
             return View(book);
+        }
+        
+        // Get book details
+        public async Task<JsonResult> GetBookDetails([FromQuery] int bookId)
+        {
+            var book = await context.Book.FindAsync(bookId);
+            
+            if(book == null)
+            {
+                return Json(new { success = false, message = "Book not found" });
+            }
+            
+            // var category = await context.Category.FindAsync(book.CategoryId);
+            // var author = await context.Author.FindAsync(book.AuthorId);
+            //
+            // var cate = category?.Name;
+            // var au = author?.FirstName + " " + author?.LastName;
+            
+            return Json(new { success = true, book});
         }
 
         public async Task<IActionResult> BookList(int? categoryId = null)
@@ -120,5 +140,77 @@ namespace LibraryManagement.Controllers
             }
             return View(book);
         }
+        
+        // Add book method
+        [HttpPost]
+        [IgnoreAntiforgeryToken]
+        public async Task<JsonResult> AddBook([FromBody] BookViewModel? book)
+        {
+            if (book == null)
+            {
+                return Json(new { success = false, message = "Please check all input fields." });
+            }
+            var newBook = book.ToNewBook();
+            
+            await context.Book.AddAsync(newBook);
+            await context.SaveChangesAsync();
+            return Json(new { success = true, message = "Book added successfully" });
+        }
+        
+        // Edit book method
+        [HttpPost]
+        [IgnoreAntiforgeryToken]
+        public async Task<JsonResult> EditBook([FromBody] BookViewModel? book)
+        {
+            logger.LogInformation(book?.BookId.ToString());
+            // Validate input
+            if (book == null)
+            {
+                return Json(new { success = false, message = "Please check all input fields." });
+            }
+
+            // Fetch the existing book from the database
+            var currentBook = await context.Book.FindAsync(book.BookId);
+
+            // Check if the book exists
+            if (currentBook == null)
+            {
+                return Json(new { success = false, message = "The book does not exist." });
+            }
+
+            // Update the book using a transformation method
+            try
+            {
+                currentBook = book.EditBook(currentBook, book);
+                context.Book.Update(currentBook);
+                await context.SaveChangesAsync();
+
+                return Json(new { success = true, message = "Book edited successfully." });
+            }
+            catch (Exception ex)
+            {
+                // Log the exception if needed
+                return Json(new { success = false, message = "An error occurred while editing the book.", details = ex.Message });
+            }
+        }
+
+        
+        
+        // Delete book method
+        [HttpDelete]
+        public async Task<JsonResult> DeleteBook([FromQuery] int bookId)
+        {
+            logger.LogInformation(bookId.ToString());
+            var book = await context.Book.FindAsync(bookId);
+            if (book == null)
+            {
+                return Json(new { success = false, message = "Book not found" });
+            }
+
+            context.Book.Remove(book);
+            await context.SaveChangesAsync();
+            return Json(new { success = true, message = "Book deleted successfully" });
+        }
+
     }
 }
