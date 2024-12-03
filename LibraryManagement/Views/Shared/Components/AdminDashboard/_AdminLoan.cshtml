@@ -1,0 +1,138 @@
+@model LibraryManagement.ViewModels.AdminViewModel
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Manage Loans</h2>
+    </div>
+
+    <table class="table table-striped" id="loan-table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>User Name</th>
+            <th>Book Title</th>
+            <th>Loan Date</th>
+            <th>Due Date</th>
+            <th>Return Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @{ var i = 1; }
+        @foreach (var loan in Model.Loans!)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@{
+                        // check the id with the user id in the list
+                        var user = Model.Users?.FirstOrDefault(u => u.Id == loan.UserId);
+                        if (user != null)
+                        {
+                            <span>@user.FullName</span>;
+                        }
+                        else
+                        {
+                            <span>Not Found</span>;
+                        }
+                    }</td>
+                <td>@loan.Book?.Title</td>
+                <td>@loan?.LoanDate.ToString("yyyy-MM-dd")</td>
+                <td>@loan?.DueDate.ToString("yyyy-MM-dd")</td>
+                <td>@(loan != null && loan.ReturnDate.HasValue ? loan.ReturnDate.Value.ToString("yyyy-MM-dd") : "Not Returned")</td>
+                <td>
+                    @switch (loan?.Status)
+                    {
+                        case 0:
+                            <span class="badge bg-info">Active</span>
+                            break;
+                        case 1:
+                            <span class="badge bg-success">Returned</span>
+                            break;
+                        default:
+                            <span class="badge bg-danger">Overdue</span>
+                            break;
+                    }
+                </td>
+                    <td>
+                        <button class="btn btn-sm btn-warning edit-loan-btn" data-bs-toggle="modal" data-bs-target="#editLoanModal" data-id="@loan.LoanId">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </button>
+                        <button class="btn btn-sm btn-danger delete-loan-btn" data-id="@loan?.LoanId">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                    </td>
+                </tr>
+                i++;
+        }
+        </tbody>
+    </table>
+</div>
+
+<!-- Edit Loan Modal -->
+<div class="modal fade" id="editLoanModal" tabindex="-1" aria-labelledby="editLoanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="editLoanForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editLoanModalLabel">Edit Loan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="editLoanId" name="LoanId" value="" />
+
+                    <div class="mb-3">
+                        <label for="editUserId" class="form-label">User</label>
+                        <select class="form-select" id="editUserId" name="UserId" required>
+                            <option value="">Select User</option>
+                            @if (Model.Users != null)
+                            {
+                                foreach (var user in Model.Users)
+                                {
+                                    <option value="@user.Id">@user.FullName</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editBookId" class="form-label">Book</label>
+                        <select class="form-select" id="editBookId" name="BookId" required>
+                            <option value="">Select Book</option>
+                            @if (Model.Books != null)
+                            {
+                                foreach (var book in Model.Books)
+                                {
+                                    <option value="@book.BookId">@book.Title</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editLoanDate" class="form-label">Loan Date</label>
+                        <input type="date" class="form-control" id="editLoanDate" name="LoanDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editDueDate" class="form-label">Due Date</label>
+                        <input type="date" class="form-control" id="editDueDate" name="DueDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editReturnDate" class="form-label">Return Date</label>
+                        <input type="date" class="form-control" id="editReturnDate" name="ReturnDate">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editStatus" class="form-label">Status</label>
+                        <select class="form-select" id="editStatus" name="Status" required>
+                            <option value="0">Active</option>
+                            <option value="1">Returned</option>
+                            <option value="2">Overdue</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary confirm-edit-loan-btn">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

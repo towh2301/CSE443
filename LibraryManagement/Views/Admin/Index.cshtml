@@ -19,12 +19,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-url="/Admin/BookView" asp-action="BookView" asp-controller="Admin" data-target="#main-content">
+                    <a class="nav-link" href="#" data-url="/Admin/BookView" data-target="#main-content">
                         <i class="bi bi-file-earmark-text"></i> Books
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-url="/Admin/LoanView" asp-action="BookView" asp-controller="Admin" data-target="#main-content">
+                    <a class="nav-link"  href="#" data-url="/Admin/LoanView" data-target="#main-content">
                         <i class="bi bi-file-earmark-text"></i> Loans
                     </a>
                 </li>
@@ -154,6 +154,7 @@
         // Delete Loans
         $(document).on('click', '.delete-loan-btn', function () {
             const loanId = $(this).data('id');
+            console.log(loanId)
             const url = `/Loan/DeleteLoan/?loanId=${encodeURIComponent(loanId)}`;
 
             if (confirm('Are you sure you want to delete this loan?')) {
@@ -290,7 +291,7 @@
             });
         }
         
-        // Edit Books
+        // Save Edit Books
         $(document).on('click', '.confirm-edit-book-btn', function () {
             const bookData = {
                 BookId: $('#editBookId').val(),
@@ -329,28 +330,85 @@
             });
         });
         
-        
-        // Edit Loans
+        // Edit loan
         $(document).on('click', '.edit-loan-btn', function () {
             const loanId = $(this).data('id');
-            const url = `/Loan/EditLoan/${loanId}`;
-
+            console.log(loanId);
+            // Fetch loan details using the loanId
+            fetchLoanDetails(loanId);
+        });
+        
+        // fetch loan details
+        function fetchLoanDetails(loanId) {
+            const url = `/Loan/GetLoanDetails/?loanId=${encodeURIComponent(loanId)}`;
+            
             $.ajax({
                 url: url,
-                type: 'POST',
-                data: {
-                    loanId: loanId,
-                    bookId: bookId,
-                    userId: userId,
-                    loanDate: loanDate,
-                    returnDate: returnDate,
+                method: 'GET',
+                success: function(response) {
+                    if (response.success) {
+                        let loan = response.loan;
+                        
+                        console.log(loan);
+                        const loanDate = new Date(loan.loanDate);
+                        const formattedLoanDate = loanDate.toISOString().slice(0, 10);
+                        const dueDate = new Date(loan.dueDate);
+                        const formattedDueDate = dueDate.toISOString().slice(0, 10);
+                        const returnDate = new Date(loan.returnDate);
+                        const formattedReturnDate = returnDate.toISOString().slice(0, 10);
+                    
+                        // Populate the form fields
+                        $('#editLoanId').val(loan.loanId);
+                        $('#editUserId').val(loan.userId);
+                        $('#editBookId').val(loan.bookId);
+                        $('#editLoanDate').val(formattedLoanDate);
+                        $('#editDueDate').val(formattedDueDate);
+                        $('#editReturnDate').val(formattedReturnDate);
+                        $('#editStatus').val(loan.status);
+                    } else {
+                        alert(response.message);
+                    }
                 },
+                error: function(error) {
+                    console.error('Error fetching loan details:', error);
+                }
+            });
+        }
+        
+        
+        // Save edit loans
+        $(document).on('click', '.confirm-edit-loan-btn', function () {
+            const loanData = {
+                LoanId: $('#editLoanId').val(),
+                UserId: $('#editUserId').val(),
+                BookId: $('#editBookId').val(),
+                LoanDate: $('#editLoanDate').val(),
+                DueDate: $('#editDueDate').val(),
+                ReturnDate: $('#editReturnDate').val(),
+                Status: $('#editStatus').val()
+            };
+            
+            console.log(loanData)
+
+            $.ajax({
+                url: '/Loan/UpdateLoan',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(loanData),
                 success: function (response) {
-                    $('#editLoanModal .modal-body').html(response);
-                    $('#editLoanModal').modal('show');
+                    if (response.success) {
+                        alert('Loan updated successfully!');
+                        $('#editLoanModal').modal('hide');
+
+                        // Call loadContent with actual URL and target
+                        loadContent('/Admin/LoanView', document.querySelector('#main-content'));
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
                 },
                 error: function () {
-                    alert('Error loading loan.');
+                    alert('Error updating loan.');
+                    $('#editLoanModal').modal('hide');
                 }
             });
         });

@@ -48,11 +48,13 @@ builder.Services.AddControllersWithViews();
 // Services
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ILoanService, LoanService>();
 
 // Repositories
 builder.Services.AddScoped<ILoanRepository, LoanRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 
 builder.Services.AddDistributedMemoryCache();
 
