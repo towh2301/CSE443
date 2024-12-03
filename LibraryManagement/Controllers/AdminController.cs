@@ -39,6 +39,39 @@ namespace LibraryManagement.Controllers
             return PartialView("~/Views/Shared/Components/AdminDashboard/_AdminUser.cshtml", adminViewModel);
         }
         
+        // Loan View
+        [HttpGet]
+        public async Task<IActionResult> LoanView()
+        {
+            try
+            {
+                var loans = await context.Loan.ToListAsync();
+                var books = await context.Book.ToListAsync();
+                var users = await context.Users.ToListAsync();
+            
+                // Create admin loan view model
+                var adminViewModel = new AdminViewModel
+                {
+                    Loans = loans,
+                    Books = books,
+                    Users = users
+                };
+            
+                logger.LogInformation(adminViewModel.Loans.Count() + " loans found");
+            
+                return PartialView("~/Views/Shared/Components/AdminDashboard/_AdminLoan.cshtml", adminViewModel);
+            } 
+            catch (Exception ex)
+            {
+                // Log the error
+                Console.WriteLine($"Error in LoanList: {ex.Message}");
+                // Initialize empty lists to prevent null reference exceptions
+                ViewBag.Loans = new List<Loan>();
+                return PartialView("~/Views/Shared/Components/AdminDashboard/_AdminLoan.cshtml");
+            }
+            
+        }
+        
         
         [HttpGet]
         public async Task<IActionResult> BookView(int? categoryId = null)
