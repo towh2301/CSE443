@@ -11,23 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6f1fa0-b583-439c-a516-8b15053fd5cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Controllers/LoanController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Interfaces/ILoanService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Services/LoanService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/ViewModels/LoanViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminLoan.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LibraryManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LibraryManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Controllers/AdminController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/ViewModels/AdminViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/ViewModels/AdminViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Controllers/LoanController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Controllers/LoanController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Admin/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Admin/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminLoan.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminLoan.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.exe" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.sourcelink.json" afterDir="false" />

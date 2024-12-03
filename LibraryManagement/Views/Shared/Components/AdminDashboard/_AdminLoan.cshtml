@@ -3,6 +3,9 @@
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>Manage Loans</h2>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addLoanModal">
+            <i class="bi bi-plus-circle" ></i> Add New Loan
+        </button>
     </div>
 
     <table class="table table-striped" id="loan-table">
@@ -54,20 +57,87 @@
                             break;
                     }
                 </td>
-                    <td>
-                        <button class="btn btn-sm btn-warning edit-loan-btn" data-bs-toggle="modal" data-bs-target="#editLoanModal" data-id="@loan.LoanId">
-                            <i class="bi bi-pencil-square"></i> Edit
-                        </button>
-                        <button class="btn btn-sm btn-danger delete-loan-btn" data-id="@loan?.LoanId">
-                            <i class="bi bi-trash"></i> Delete
-                        </button>
-                    </td>
-                </tr>
-                i++;
+                <td>
+                    <button class="btn btn-sm btn-warning edit-loan-btn" data-bs-toggle="modal" data-bs-target="#editLoanModal" data-id="@loan.LoanId">
+                        <i class="bi bi-pencil-square"></i> Edit
+                    </button>
+                    <button class="btn btn-sm btn-danger delete-loan-btn" data-id="@loan?.LoanId">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                </td>
+            </tr>
+            i++;
         }
         </tbody>
     </table>
 </div>
+
+<!-- Add Loan Modal -->
+<div class="modal fade" id="addLoanModal" tabindex="-1" aria-labelledby="addLoanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="addLoanForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addLoanModalLabel">Add New Loan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="mb-3">
+                        <label for="userId" class="form-label">User</label>
+                        <select class="form-select" id="userId" name="UserId" required>
+                            <option value="">Select User</option>
+                            @if (Model.Users != null)
+                            {
+                                foreach (var user in Model.Users)
+                                {
+                                    <option value="@user.Id">@user.FullName</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bookId" class="form-label">Book</label>
+                        <select class="form-select" id="bookId" name="BookId" required>
+                            <option value="">Select Book</option>
+                            @if (Model.Books != null)
+                            {
+                                foreach (var book in Model.Books)
+                                {
+                                    <option value="@book.BookId">@book.Title</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loanDate" class="form-label">Loan Date</label>
+                        <input type="date" class="form-control" id="loanDate" name="LoanDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dueDate" class="form-label">Due Date</label>
+                        <input type="date" class="form-control" id="dueDate" name="DueDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="returnDate" class="form-label">Return Date</label>
+                        <input type="date" class="form-control" id="returnDate" name="ReturnDate">
+                    </div>
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Status</label>
+                        <select class="form-select" id="status" name="Status" required>
+                            <option value="0">Active</option>
+                            <option value="1">Returned</option>
+                            <option value="2">Overdue</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary create-loan-btn">Add Loan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+             
 
 <!-- Edit Loan Modal -->
 <div class="modal fade" id="editLoanModal" tabindex="-1" aria-labelledby="editLoanModalLabel" aria-hidden="true">

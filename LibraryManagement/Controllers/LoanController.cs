@@ -27,8 +27,12 @@ public class LoanController(ILoanService loanService, IBookService bookService,I
     }
     
     [HttpPost]
-    public async Task<JsonResult> CreateLoan([FromBody] LoanViewModel loanViewModel)
+    public async Task<JsonResult> CreateLoan([FromBody] LoanViewModel? loanViewModel)
     {
+        if(loanViewModel == null)
+        {
+            return new JsonResult(new { success = false, message = "LoanViewModel is null in controller" });
+        }
         return await loanService.CreateLoan(loanViewModel);
     }
     

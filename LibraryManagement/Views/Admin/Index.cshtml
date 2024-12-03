@@ -508,19 +508,33 @@
         // Create Loans
         $(document).on('click', '.create-loan-btn', function () {
             const url = `/Loan/CreateLoan`;
+            const data = {
+                BookId: $('#bookId').val(),
+                UserId: $('#userId').val(),
+                LoanDate: $('#loanDate').val(),
+                ReturnDate: $('#returnDate').val(),
+                DueDate: $('#dueDate').val(),
+                status: $('#status').val()
+            };
+            
+            console.log(data);
+            
 
             $.ajax({
                 url: url,
                 type: 'POST',
-                data: {
-                    bookId: bookId,
-                    userId: userId,
-                    loanDate: loanDate,
-                    returnDate: returnDate,
-                },
+                contentType: 'application/json',
+                data: JSON.stringify(data),
                 success: function (response) {
-                    $('#createLoanModal .modal-body').html(response);
-                    $('#createLoanModal').modal('show');
+                    if (response.success) {
+                        alert('Loan created successfully!');
+                        $('#addLoanModal').modal('hide');
+
+                        // Call loadContent with actual URL and target
+                        loadContent('/Admin/LoanView', document.querySelector('#main-content'));
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
                 },
                 error: function () {
                     alert('Error creating loan.');
