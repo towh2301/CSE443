@@ -3,6 +3,7 @@ using LibraryManagement.Models;
 using LibraryManagement.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagement.Controllers
 {
@@ -169,9 +170,30 @@ namespace LibraryManagement.Controllers
             return RedirectToAction("Login", "Account");
         }
         
-        public IActionResult Profile()
+        public async Task<IActionResult> Profile(String? id)
         {
-            return View();
+            if (id != null)
+            {
+                var user = await userManager.FindByIdAsync(id);
+                var loans = await context.Loan.Where(l => l.UserId == id).ToListAsync();
+                var books = await context.Book.ToListAsync();
+                if (user == null)
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+                
+                // Create Profile View Model
+                var profileViewModel = new ProfileViewModel
+                {
+                    Loans = loans,
+                    User = user,
+                    Books = books
+                };
+                
+            
+                return View(profileViewModel);
+            }
+            return RedirectToAction("Login", "Account");
         }
         
         [HttpDelete]

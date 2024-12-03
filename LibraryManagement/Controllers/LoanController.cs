@@ -9,11 +9,6 @@ namespace LibraryManagement.Controllers;
 [Authorize]
 public class LoanController(ILoanService loanService, IBookService bookService,ILogger<LoanController> logger) : Controller
 {
-    [Authorize(Policy = "AdminOnly")]
-    public IActionResult Index()
-    {
-        return View();
-    }
     [HttpGet]
     public async Task<JsonResult> LoanList([FromQuery] string userId)
     {

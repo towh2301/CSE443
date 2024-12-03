@@ -1,14 +1,14 @@
 @using Microsoft.AspNet.Identity
 @using Microsoft.AspNetCore.Identity;
 
-@inject SignInManager<User> signInManager;
+@inject SignInManager<User> SignInManager;
 
 
 <ul class="navbar-nav ms-auto">
-    @if (signInManager.IsSignedIn(User))
+    @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Account" asp-action="Profile">Hello @User.Identity.GetUserName()</a>
+            <a class="nav-link text-dark" asp-controller="Account" asp-action="Profile" asp-route-id="@User.Identity.GetUserId()">Hello @User.Identity.GetUserName()</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Logout</a>
