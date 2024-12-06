@@ -1,4 +1,7 @@
-﻿namespace LibraryManagement.Models
+﻿using LibraryManagement.ViewModels;
+using Microsoft.VisualBasic;
+
+namespace LibraryManagement.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations;

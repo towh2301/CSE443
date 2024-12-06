@@ -30,7 +30,27 @@ namespace LibraryManagement.Models
 
         [Required]
         [Range(0, 2, ErrorMessage = "Status must be 0 (Active), 1 (Returned), or 2 (Overdue).")]
+        // Set the status based on the due date and return date
         public int Status { get; set; }
+            
+            
+        public int SetStatus(DateTime dueDate, DateTime? returnDate)
+        {
+            if (returnDate.HasValue && returnDate > dueDate)
+            {
+                return 2;
+            }
+            else if (!returnDate.HasValue)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+        }
     }
+    
+
 }
 

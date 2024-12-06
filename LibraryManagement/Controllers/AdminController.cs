@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace LibraryManagement.Controllers
 {
     [Authorize(Policy = "AdminOnly")]
-    public class AdminController(ApplicationDbContext context, ILogger<AccountController> logger, IBookService bookService) : Controller
+    public class AdminController(ApplicationDbContext context, ILogger<AccountController> logger, IBookService bookService, ILoanService loanService) : Controller
     {
         [HttpGet]
         public IActionResult Index()
@@ -45,7 +45,7 @@ namespace LibraryManagement.Controllers
         {
             try
             {
-                var loans = await context.Loan.ToListAsync();
+                var loans = await loanService.GetLoanList();
                 var books = await context.Book.ToListAsync();
                 var users = await context.Users.ToListAsync();
             

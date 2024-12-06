@@ -3,6 +3,7 @@ using LibraryManagement.Data;
 using LibraryManagement.Interfaces;
 using LibraryManagement.Models;
 using LibraryManagement.ViewModels;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,12 +11,12 @@ using Microsoft.EntityFrameworkCore;
 namespace LibraryManagement.Controllers
 {
     [Authorize]
-    public class BookController(ApplicationDbContext context, ILogger<BookController> logger, IBookService bookService) : Controller
+    public class BookController(ApplicationDbContext context, ILogger<BookController> logger, IBookService bookService, ILoanService loanService) : Controller
     {
 
         public IActionResult Index()
         {
-            return View();
+            return Redirect("Book/BookList");
         }
 
         public async Task<IActionResult> BookDetail(int id)
@@ -211,6 +212,39 @@ namespace LibraryManagement.Controllers
             await context.SaveChangesAsync();
             return Json(new { success = true, message = "Book deleted successfully" });
         }
+        
+        
+        [Authorize]
+        public async Task<IActionResult>  Loan(int id)
+        {
+            var book = await context.Book.FindAsync(id);
+            
+            if(book == null)
+            {
+                return NotFound();
+            }
+            
+            var viewModel = new LoanViewModel
+            {
+                UserId = User.Identity.GetUserId(),
+                BookId = book.BookId,
+                BookTitle = book.Title,
+                LoanDate = DateTime.Today,
+                DueDate = DateTime.Today.AddDays(14), // Default due date
+            };
+            
+            return View(viewModel);
+        }
 
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> UserLoan(LoanViewModel loanViewModel)
+        {
+            Console.WriteLine(("Loan View Model Here",loanViewModel.ToString()));
+            //if (!ModelState.IsValid) return RedirectToAction("ModelErrors" );
+            await loanService.CreateLoan(loanViewModel);
+            return RedirectToAction("LoanConfirmation");
+        }
     }
 }

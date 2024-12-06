@@ -17,8 +17,10 @@ public class LoanViewModel
     // Foreign Key and Navigation Property for Book
     public int BookId { get; set; }
     [ForeignKey("BookId")]
-    public Book Book { get; set; }                   // Each loan is associated with one book
-
+    public Book Book { get; set; }  
+    
+    public string? BookTitle { get; set; }
+    
     public DateTime LoanDate { get; set; }
 
     public DateTime DueDate { get; set; }
@@ -60,5 +62,10 @@ public class LoanViewModel
     public IEnumerator GetEnumerator()
     {
         throw new NotImplementedException();
+    }
+
+    public override string ToString()
+    {
+        return $"LoanId: {LoanId}, UserId: {UserId}, BookId: {BookId}, BookTitle: {BookTitle}, LoanDate: {LoanDate}, DueDate: {DueDate}, ReturnDate: {ReturnDate}, Status: {Status}";
     }
 }

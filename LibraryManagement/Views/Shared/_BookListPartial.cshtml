@@ -17,8 +17,17 @@
                                 <p>@book.Description</p>
                                 <div class="book-author">@book.Publisher</div>
                                 <div class="published-date">@book.PublishedYear?.ToString("yyyy")</div>
+                                <div class="remaining-copies">Remaining copies: @book.AvailableCopies</div>
                             </div>
-                            <a href="#" class="loan-button">Loan now</a>
+                            @if(book.AvailableCopies > 0)
+                            {
+                                <a href="@Url.Action("Loan", "Book", new { id = book.BookId })" class="loan-button">Loan now</a>
+                            }
+                            else
+                            {
+                                // Set inactive button
+                                <a class="loan-button disabled">Out of stock</a>
+                            }
                         </div>
                     </div>
                 </div>

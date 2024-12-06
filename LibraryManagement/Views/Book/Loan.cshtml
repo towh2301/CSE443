@@ -1,0 +1,134 @@
+@using Microsoft.AspNetCore.Identity
+@model LibraryManagement.ViewModels.LoanViewModel
+@inject SignInManager<User> SignInManager;
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Loan Book";
+}
+
+@using (Html.BeginForm("UserLoan", "Book", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <section class="container mt-5">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <h3 class="mb-4">Loan Book</h3>
+                    @* <!-- Book Title --> *@
+                    <div data-mdb-input-init class="mb-3">
+                        <label for="bookTitle" class="form-label">Book</label>
+                        @Html.TextBoxFor(m => m.BookTitle, new {
+                            @id = "bookTitle",
+                            @placeholder = "Book Title",
+                            @class = "form-control form-control-lg",
+                            @readonly = "readonly"
+                        })
+                    </div>
+                    <!-- UserId input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        @Html.TextBoxFor(m => m.UserId, new {
+                        @id = "userId",
+                        @value = @Model.UserId,
+                        @class = "form-control form-control-lg",
+                        @type = "hidden"
+                        })
+                    </div>
+                    
+
+                    <!-- BookId input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        @Html.TextBoxFor(m => m.BookId, new { 
+                            @id = "bookId", 
+                            @value = Model.BookId, 
+                            @class = "form-control form-control-lg", 
+                            @type = "hidden" 
+                        })
+                    </div>
+
+                    <!-- LoanDate input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <label for="loanDate" class="form-label">Loan Date</label>
+                        @Html.TextBoxFor(m => m.LoanDate, new { 
+                            @id = "loanDate", 
+                            @placeholder = "Loan Date", 
+                            @class = "form-control form-control-lg", 
+                            @type = "date", 
+                            @value = Model.LoanDate,
+                            @readonly = "readonly"
+                        })
+                    </div>
+
+                    <!-- DueDate input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <label for="dueDate" class="form-label">Due Date</label>
+                        @Html.TextBoxFor(m => m.DueDate, new { 
+                            @id = "dueDate", 
+                            @placeholder = "Due Date", 
+                            @class = "form-control form-control-lg", 
+                            @type = "date", 
+                            // Set the DueDate to 14 days from the LoanDate
+                            @value = Model.DueDate,
+                            @readonly = "readonly"
+                        })
+                    </div>
+
+                    <!-- ReturnDate input -->
+                    @* <div data-mdb-input-init class="form-outline mb-4"> *@
+                    @*     @Html.TextBoxFor(m => m.ReturnDate, new { *@
+                    @*         @id = "returnDate", *@
+                    @*         @placeholder = "Return Date", *@
+                    @*         @class = "form-control form-control-lg", *@
+                    @*         @type = "date", *@
+                    @*         @value = Model.ReturnDate *@
+                    @*     }) *@
+                    @* </div> *@
+
+                    <!-- Status Dropdown -->
+                    <div data-mdb-input-init class="form-outline mb-4 hidden">
+                        <label for="Status" class="form-label">Status</label>
+                        @Html.DropDownListFor(m => m.Status,
+                            new SelectList(new[]
+                            {
+                                new { Value = 0, Text = "Active" }, // Default value is Active
+                            }, "Value", "Text", Model.Status),
+                            new { @id = "Status", @class = "form-select form-select-lg"}
+                            )
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            Submit Loan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script>
+        $(document).ready(function () {
+            // Get the LoanDate input
+            var loanDate = document.getElementById("loanDate");
+            // Get the DueDate input
+            var dueDate = document.getElementById("dueDate");
+
+            // Auto set the LoanDate to today's date
+            loanDate.valueAsDate = new Date();
+            
+            // Get the value of the LoanDate input
+            let loanDateValue = new Date(loanDate.value);
+            dueDate.valueAsDate = new Date(loanDateValue.setDate(loanDateValue.getDate() + 14));
+            
+            // Set the status to readonly
+            var status = document.getElementById("Status");
+            status.value = 0;
+            status.disabled = true;
+        });
+    </script>
+}
+}

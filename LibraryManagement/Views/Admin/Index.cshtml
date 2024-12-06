@@ -354,8 +354,7 @@
                         const formattedLoanDate = loanDate.toISOString().slice(0, 10);
                         const dueDate = new Date(loan.dueDate);
                         const formattedDueDate = dueDate.toISOString().slice(0, 10);
-                        const returnDate = new Date(loan.returnDate);
-                        const formattedReturnDate = returnDate.toISOString().slice(0, 10);
+                        
                     
                         // Populate the form fields
                         $('#editLoanId').val(loan.loanId);
@@ -363,7 +362,7 @@
                         $('#editBookId').val(loan.bookId);
                         $('#editLoanDate').val(formattedLoanDate);
                         $('#editDueDate').val(formattedDueDate);
-                        $('#editReturnDate').val(formattedReturnDate);
+                        $('#editReturnDate').val(loan.returnDate);
                         $('#editStatus').val(loan.status);
                     } else {
                         alert(response.message);
@@ -384,7 +383,7 @@
                 BookId: $('#editBookId').val(),
                 LoanDate: $('#editLoanDate').val(),
                 DueDate: $('#editDueDate').val(),
-                ReturnDate: $('#editReturnDate').val(),
+                ReturnDate: $('#editReturnDate').val() || null,
                 Status: $('#editStatus').val()
             };
             

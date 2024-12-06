@@ -1,7 +1,7 @@
 ﻿@model Book 
 
 @{
-    Layout = "_AppLayout";
+    Layout = "_AdminLayout";
     ViewData["Title"] = Model.Title;
 }
 <div class="container my-5">
@@ -22,7 +22,7 @@
                     </div>
                     <a onclick="location.href='@Url.Action("ReadPdf", "Book", new { id = @Model.BookId })'" class="btn btn-primary mt-4">Read Now</a>
                     <!-- Optional: Link to Download PDF -->
-                    <a href="@Model.Pdf" class="btn btn-primary mt-4">Loan Now</a>
+                    <a class="btn btn-primary mt-4" asp-controller="Book" asp-action="Loan" asp-route-id="@Model.BookId">Loan Now</a>
                 </div>
             </div>
         </div>

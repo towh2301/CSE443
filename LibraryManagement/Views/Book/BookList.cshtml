@@ -110,40 +110,6 @@
         background-color: #0056b3;
     }
 </style>
-
-@* <div class="container"> *@
-@*     <h2 class="my-4">@(ViewBag.CurrentCategory?.Name ?? "All Books")</h2> *@
-@*     <div class="row flex-row align-content-center"> *@
-@*         @if (ViewBag.Books != null && ViewBag.Books.Count > 0) *@
-@*         { *@
-@*         @foreach (var book in ViewBag.Books) *@
-@*         { *@
-@*         <div class="col-md-3 my-3"> *@
-@*             <div class="book-list"> *@
-@*                 <div class="card h-100"> *@
-@*                     <img src="@book.Avatar" alt="Book Cover" *@
-@*                          onclick="location.href='@Url.Action("BookDetail", "Book", new { id = book.BookId })'"> *@
-@*                     <div class="card-content"> *@
-@*                         <h5>@book.Title</h5> *@
-@*                         <p>@book.Description</p> *@
-@*                         <div class="book-author">@book.Publisher</div> *@
-@*                         <div class="published-date">@book.PublishedYear?.ToString("yyyy")</div> *@
-@*                     </div> *@
-@*                     <a href="#" class="loan-button">Loan now</a> *@
-@*                 </div> *@
-@*             </div> *@
-@*         </div> *@
-@*         } *@
-@*         } *@
-@*         else *@
-@*         { *@
-@*         <div class="col-12"> *@
-@*             <p class="text-center">No books found in this category.</p> *@
-@*         </div> *@
-@*         } *@
-@*     </div> *@
-@* </div> *@
-@* <partial name="_BookListPartial" for="ViewBag.Books as List<BookViewModel>"/> *@
 @await Html.PartialAsync("_BookListPartial", ViewBag.Books as List<BookViewModel>)
 
 @section Scripts {
