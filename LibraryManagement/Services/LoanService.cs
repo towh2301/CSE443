@@ -70,18 +70,9 @@ public class LoanService(ILoanRepository loanRepository, ApplicationDbContext co
     public async Task<JsonResult> GetLoanById([FromQuery]string loanId)
     {
         var loan = await context.Loan.FindAsync(int.Parse(loanId));
-        if (loan == null)
+        if(loan == null)
         {
             return new JsonResult(new { success = false, message = "Loan not found" });
-        }
-
-        if (loan.ReturnDate == null)
-        {
-            loan.Status = loan.DueDate < DateTime.Now ? 2 : 0; // Overdue or Active
-        }
-        else
-        {
-            loan.Status = loan.ReturnDate > loan.DueDate ? 2 : (loan.ReturnDate == loan.DueDate ? 1 : 0); // Overdue, Returned, or Active
         }
 
         context.Loan.Update(loan);
@@ -113,7 +104,29 @@ public class LoanService(ILoanRepository loanRepository, ApplicationDbContext co
     public async Task<List<Loan>> GetLoanList()
     {
         var loans  = await context.Loan.ToListAsync();
+        loans = await UpdateLoanStatus(loans);
+        return await context.Loan.ToListAsync();
+    }
+
+    public async Task<JsonResult> GetLoanByUserId(string userId)
+    {
+        var loans = await context.Loan.Where(l => l.UserId == userId).ToListAsync();
         // Update the status of each loan
+        loans = await UpdateLoanStatus(loans);
+        return new JsonResult(new { success = true, loans });
+    }
+    
+    public async Task<List<Loan>> GetLoansListByUserId(string userId)
+    {
+        var loans = await context.Loan.Where(l => l.UserId == userId).ToListAsync();
+        // Update the status of each loan
+        loans = await UpdateLoanStatus(loans);
+        return loans;
+    }
+    
+    // Update the status of each loan
+    public async Task<List<Loan>> UpdateLoanStatus(List<Loan> loans)
+    {
         foreach (var loan in loans)
         {
             if (loan.ReturnDate == null)
@@ -126,13 +139,7 @@ public class LoanService(ILoanRepository loanRepository, ApplicationDbContext co
             }
             context.Loan.Update(loan);
         }
-        
-        return await context.Loan.ToListAsync();
-    }
-
-    public async Task<JsonResult> GetLoanByUserId(string userId)
-    {
-        var loans = await context.Loan.Where(l => l.UserId == userId).ToListAsync();
-        return new JsonResult(new { success = true, loans });
+        await context.SaveChangesAsync();
+        return loans;
     }
 }

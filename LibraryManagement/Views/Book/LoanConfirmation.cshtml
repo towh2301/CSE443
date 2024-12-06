@@ -1,0 +1,20 @@
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="container my-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-body text-center p-5">
+            <div class="mb-4">
+                <i class="bi bi-check-circle text-success" style="font-size: 4rem;"></i>
+            </div>
+            <h1 class="h3 mb-3">Loan Confirmed!</h1>
+            <p class="text-muted mb-4">
+                Your request has been successfully processed. You can return to the previous page or navigate to another section.
+            </p>
+            <a href="@Url.Action("Index", "Home")" class="btn btn-primary px-5">
+                <i class="bi bi-arrow-left-circle me-2"></i>Return
+            </a>
+        </div>
+    </div>
+</div>

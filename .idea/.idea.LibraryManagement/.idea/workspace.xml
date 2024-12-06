@@ -11,28 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6f1fa0-b583-439c-a516-8b15053fd5cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Views/Book/Loan.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Views/Book/Loan.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LibraryManagement/Views/Book/LoanConfirmation.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LibraryManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LibraryManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Controllers/AdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Controllers/AccountController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Controllers/BookController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Models/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Models/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Models/Loan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Models/Loan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Interfaces/ILoanService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Interfaces/ILoanService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/Services/LoanService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Services/LoanService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/ViewModels/LoanViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/ViewModels/LoanViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Admin/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Admin/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Book/BookDetail.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Book/BookDetail.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Book/BookList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Book/BookList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Account/Profile.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Account/Profile.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminLoan.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/Components/AdminDashboard/_AdminLoan.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_AppLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_AppLayout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_BookListPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_BookListPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.exe" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/bin/Debug/net8.0/LibraryManagement.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryManagement/obj/Debug/net8.0/LibraryManagement.sourcelink.json" afterDir="false" />
@@ -205,7 +197,7 @@
       <workItem from="1732862120744" duration="30000" />
       <workItem from="1733187605104" duration="8182000" />
       <workItem from="1733329477297" duration="11553000" />
-      <workItem from="1733457014444" duration="3762000" />
+      <workItem from="1733457014444" duration="5675000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <option name="closed" value="true" />

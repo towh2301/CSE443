@@ -1,4 +1,5 @@
 ﻿using LibraryManagement.Data;
+using LibraryManagement.Interfaces;
 using LibraryManagement.Models;
 using LibraryManagement.ViewModels;
 using Microsoft.AspNetCore.Identity;
@@ -12,7 +13,8 @@ namespace LibraryManagement.Controllers
         ApplicationDbContext context,
         UserManager<User> userManager,
         SignInManager<User> signInManager,
-        ILogger<AccountController> logger)
+        ILogger<AccountController> logger,
+        ILoanService loanService)
         : Controller
     {
 
@@ -175,7 +177,7 @@ namespace LibraryManagement.Controllers
             if (id != null)
             {
                 var user = await userManager.FindByIdAsync(id);
-                var loans = await context.Loan.Where(l => l.UserId == id).ToListAsync();
+                var loans = await loanService.GetLoansListByUserId(id);
                 var books = await context.Book.ToListAsync();
                 if (user == null)
                 {

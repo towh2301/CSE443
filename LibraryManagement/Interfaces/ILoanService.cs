@@ -13,6 +13,8 @@ public interface ILoanService
     Task<JsonResult> GetAllLoans();
     
     Task<List<Loan>> GetLoanList();
+
+    Task<List<Loan>> GetLoansListByUserId(string userId);
     
     Task<JsonResult> GetLoanByUserId([FromQuery] String userId);
 }

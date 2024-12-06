@@ -246,5 +246,10 @@ namespace LibraryManagement.Controllers
             await loanService.CreateLoan(loanViewModel);
             return RedirectToAction("LoanConfirmation");
         }
+        
+        public IActionResult LoanConfirmation()
+        {
+            return View();
+        }
     }
 }
